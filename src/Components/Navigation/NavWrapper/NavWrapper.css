@@ -1,0 +1,14 @@
+nav.nav {
+    width: 80vw;
+    font-size: 19px;
+    margin: 0 auto;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+
+
