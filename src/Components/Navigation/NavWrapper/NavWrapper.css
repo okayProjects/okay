@@ -1,10 +1,13 @@
 nav.nav {
-    width: 80vw;
+    
     font-size: 19px;
     margin: 0 auto;
+    padding: 10px;
+    /* background-color: #777; */
 }
 
 .nav ul {
+    /* width: 80vw; */
     display: flex;
     justify-content: space-around;
     list-style-type: none;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavWrapper from '../../../Navigation/NavWrapper/NavWrapper';
 
 
 const offerList = ['one', 'two', 'three'];
@@ -12,12 +13,13 @@ const Offer = (props) => {
     ))
 
     return (
-        <div>
+        <>
+            <NavWrapper />
             <p>I am OFFER</p>
             <ul>
                 {products}
             </ul>
-        </div>
+        </>
     )
 }
 

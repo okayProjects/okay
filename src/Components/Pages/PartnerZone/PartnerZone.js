@@ -1,10 +1,12 @@
 import React from 'react';
+import NavWrapper from '../../Navigation/NavWrapper/NavWrapper';
 
-const PartnerZone = () => {
+const PartnerZone = (props) => {
     return (
-        <div>
+        <>
+            <NavWrapper />
             <p>I am PARTNER ZONE</p>
-        </div>
+        </>
     );
 }
 

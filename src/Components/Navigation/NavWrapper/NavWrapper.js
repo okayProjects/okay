@@ -4,9 +4,9 @@ import './NavWrapper.css';
 import NavItem from '../NavItem/NavItem';
 
 const menuList = [
-    { name: 'home', path: '/', exact: true },
-    { name: 'offer', path: '/offer' },
-    { name: 'partner zone', path: '/partnerZone' },
+    { name: 'nasze kursy', path: '/offer' },
+    { name: 'strefa partnera', path: '/partnerZone' },
+    { name: 'koszyk', path: '/shop' }
 ];
 
 const NavWrapper = (props) => {
