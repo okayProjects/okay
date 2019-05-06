@@ -2,7 +2,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: #444;
+    background-color: #322;
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -25,6 +25,8 @@
     font-size: 70px;
     text-transform: lowercase;
     line-height: 70px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .home .ok span:first-child {
@@ -32,7 +34,7 @@
     color: rgb(223, 14, 153);
     transform: skew(-25deg);
     padding-right: 7px; 
-    font-weight: bold;
+    
     font-size: 90px;
     text-transform: uppercase;
     /* animation: logoScale 1s linear; */

@@ -4,7 +4,7 @@ import Home from '../Pages/Home/Home';
 import OfferList from '../Pages/Offer/OfferList/OfferList';
 import PartnerZone from '../Pages/PartnerZone/PartnerZone';
 import OfferPage from '../Pages/Offer/OfferPage/OfferPage';
-// import NavWrapper from '../Navigation/NavWrapper/NavWrapper';
+
 
 
 class WrappingPage extends Component {
@@ -12,7 +12,6 @@ class WrappingPage extends Component {
     render() {
         return (
             <>
-                {/* <NavWrapper /> */}
                 <Switch>
                     <Route path='/offer/:id' component={OfferPage} />
                     <Route path='/offer' component={OfferList} />

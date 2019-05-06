@@ -7,7 +7,6 @@ const OfferPage = (props) => {
     return (
         <>
             <NavWrapper />
-            <div>OFFER PAGE</div>
             <SingleOffer id={props.match.params.id} />
         </>
     );

@@ -1,25 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavWrapper from '../../../Navigation/NavWrapper/NavWrapper';
+import './OfferList.css';
+import geImg from '../../../../images/offer/ge.jpg';
+import businessImg from '../../../../images/offer/business.jpg';
+import abroadImg from '../../../../images/offer/abroad.jpg';
 
 
-const offerList = ['one', 'two', 'three'];
+const offerList = [{ type: 'angielski ogólny', src: geImg, slogan: 'kursy indywidualne i grupowe, matura i egzamin po ósmej klasie' }, { type: 'angielski dla firm', src: businessImg, slogan: 'kursy indywidualne, grupowe i te "szyte na miarę" ' }, { type: 'angielski za granicą', src: abroadImg, slogan: "wakacje w Anglii - nauka poprzez relax międzynarodowej grupie" }];
+
+
 
 const Offer = (props) => {
+    console.log(props);
     const products = offerList.map(product => (
-        <li key={product}>
-            <Link to={`${props.match.path}/${product}`}>{product}</Link>
-        </li>
+        <div className='single-offer-wrapper' key={product.type}>
+            <div className='offer-info'>
+                <h2>{product.type}</h2>
+                <p>{product.slogan}</p>
+                <div>
+                    <button>
+                        <Link to={`${props.match.path}/${product.type}`}>{product.type}</Link>
+                    </button>
+                </div>
+            </div>
+            <img src={product.src} alt={product.type} />
+        </div >
     ))
 
     return (
-        <>
+        <div className='offer-list'>
             <NavWrapper />
-            <p>I am OFFER</p>
-            <ul>
+            <div className='offer-wrapper'>
                 {products}
-            </ul>
-        </>
+            </div>
+
+        </div>
     )
 }
 

@@ -53,9 +53,12 @@ class Home extends Component {
         }, 2250);
 
         setTimeout(() => {
+
             this.setState(prevState => {
                 return { pageLoaded: prevState.pageLoaded = true };
             });
+
+
         }, 4500);
     }
 

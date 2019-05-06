@@ -1,16 +1,24 @@
 nav.nav {
-    
     font-size: 19px;
     margin: 0 auto;
     padding: 10px;
-    /* background-color: #777; */
+    height: 60px;
+    background-color: #ddd;
 }
 
 .nav ul {
-    /* width: 80vw; */
+    /* width: 90vw; */
     display: flex;
     justify-content: space-around;
     list-style-type: none;
+    /* background-color: red; */
+    padding-right: 100px;
+}
+
+@media(max-width: 1024px) {
+    .nav ul {
+        flex-direction: column;
+    }
 }
 
 
