@@ -8,7 +8,7 @@ import NavItem from '../NavItem/NavItem';
 const menuList = [
     { name: 'nasze kursy', path: '/offer' },
     { name: 'strefa partnera', path: '/partnerZone' },
-    { name: 'koszyk', path: '/shop' }
+    { name: 'koszyk', path: '/orders' }
 ];
 
 const NavWrapper = (props) => {

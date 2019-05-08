@@ -12,7 +12,6 @@ const offerList = [{ type: 'angielski ogólny', src: geImg, slogan: 'kursy indyw
 
 
 const Offer = (props) => {
-    console.log(props);
     const products = offerList.map(product => (
         <div className='single-offer-wrapper' key={product.type}>
             <div className='offer-info'>

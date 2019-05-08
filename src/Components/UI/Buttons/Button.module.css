@@ -1,0 +1,217 @@
+.Shake {
+    border: 2px solid rgb(97,23,54);
+    background-color:transparent;
+    padding: 0px 80px;
+    color: #661f3e;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    overflow: hidden;
+    animation: shake 4s linear infinite;
+}
+
+.Shake span {
+    height: 20px;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: .3s;
+    line-height: 40px;
+}
+
+.Shake span:last-of-type {
+    top: -20px;
+    left: 360px;
+}
+
+.Shake:hover span:first-of-type {
+    left: -360px;
+}
+
+.Shake:hover span:last-of-type {
+    left: 0;
+}
+
+@keyframes shake {
+    0%{
+        transform: translateX(0);
+    }
+    90%{
+        transform: translateX(0);
+    }
+    91%{
+        transform: translateX(20px);
+    }
+    92%{
+        transform: translateX(-20px);
+    }
+    93%{
+        transform: translateX(20px);
+    }
+    94%{
+        transform: translateX(-20px);
+    }
+    95%{
+        transform: translateX(20px);
+    }
+    96%{
+        transform: translateX(-20px);
+    }
+    97%{
+        transform: translateX(20px);
+    }
+    98%{
+        transform: translateX(-20px);
+    }
+    99%{
+        transform: translateX(20px);
+    }
+    100%{
+        transform: translateX();
+    }
+}
+
+
+@media (max-width: 1200px){
+    .Shake {
+        border: 1px solid rgb(97,23,54);
+        padding: 0px 10%;
+        font-size: 10px;
+    }
+    
+    .Shake span {
+        height: 7px;
+        line-height: 16px;
+    }
+    
+    .Shake span:last-of-type {
+        top: -7px;
+    }
+}
+
+/* fill-in-from-left */
+
+.LeftToRight {
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 50px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+    color: brown;
+    font-weight: bold;
+    transition: .6s .2s;
+}
+
+.LeftToRight::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -105%;
+    transform: translate(0, -50%);
+    height: 20%;
+    width: 100%;
+    background-color: brown;
+    transition: right .3s linear, height .2s .3s;
+    z-index: -1;
+}
+
+.LeftToRight:hover::after {
+    right: 0;
+    height: 100%;
+}
+
+.LeftToRight:hover {
+    color: white;
+}
+
+/* Triangle with a dot */
+
+
+.OrderWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:10px; 
+}
+
+.TriangleDot {
+    position: relative;
+    background-color: brown;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid black;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 15px 40px;
+    box-shadow: 2px 2px 2px black;
+    overflow: hidden;
+    transition: .3s; 
+}
+
+.TriangleDot:hover, .TriangleDot:active {
+    background-color: green;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+}
+
+.TriangleDot:disabled {
+    display: none; 
+}
+
+.TriangleDot:not(:disabled) {
+    animation: enable 0.5s linear;
+}
+
+.TriangleDot::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    border-left: 5px solid yellow;
+    border-bottom: 27px solid transparent;
+    border-top: 27px solid transparent;
+    transition: .8s;
+    /* width: 0; */
+}
+
+.TriangleDot:hover.TriangleDot::before {
+    border-left: 27px solid blue;
+}
+
+.TriangleDot::after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    right: 5%;
+    top: 50% - .6em;
+    background-color: rgb(223, 14, 153);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: .8s;
+}
+
+.TriangleDot:hover.TriangleDot:after {
+    background-color: rgb(223, 14, 153);
+    transform: scale(1);
+}
+
+@keyframes enable {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
