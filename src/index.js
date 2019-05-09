@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore } from 'redux';
-import reducer from './Store/reducer';
+import { createStore, combineReducers } from 'redux';
+import GEReducer from './Store/Reducers/GEReducer';
+import B2BReducer from './Store/Reducers/B2BReducer';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const rootReducer = combineReducers({
+    GEReducer,
+    B2BReducer
+})
+
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 const app = (<Provider store={store}>

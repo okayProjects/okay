@@ -14,7 +14,7 @@ class GeneralEnglishCourses extends Component {
                     id={course.id}
                     courseDescription={course.id}
                     price={course.price}
-                    addToBasket={(id) => this.props.onAddCourseToBasket(id)} />
+                    addToBasket={(id) => this.props.onToggleCourseBasket(id)} />
             </section>
         )
         return (
@@ -29,13 +29,13 @@ class GeneralEnglishCourses extends Component {
 const mapStateToProps = state => {
 
     return {
-        generalEnglishCourses: state.generalEnglishCourses
+        generalEnglishCourses: state.GEReducer.generalEnglishCourses
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAddCourseToBasket: (id) => dispatch({ type: actionTypes.COURSE_ADDED_TO_BASKET, id: id })
+        onToggleCourseBasket: (id) => dispatch({ type: actionTypes.ADD_COURSE_TO_BASKET, id: id })
     }
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import './SingleOffer.css';
 import GeneralEnglishCourses from '../../../Courses/GECourses/GeneralEnglishCourses';
+import BusinessCourses from '../../../Courses/BusinessCourses/BusinessCourses';
 import ge1 from '../../../../images/GESlides/pic1.jpg';
 import ge2 from '../../../../images/GESlides/pic2.jpg';
 import ge3 from '../../../../images/GESlides/pic3.jpg';
@@ -65,6 +66,7 @@ const SingleOffer = (props) => {
                 </React.Fragment>);
 
             header = <div className='carousel-wrapper'>{slidesBusiness}{h1Business}</div>
+            main = <BusinessCourses />
             break;
 
         case 'angielski za granicą':
