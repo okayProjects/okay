@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { createStore, combineReducers } from 'redux';
 import GEReducer from './Store/Reducers/GEReducer';
 import B2BReducer from './Store/Reducers/B2BReducer';
+import AbroadReducer from './Store/Reducers/AbroadReducer';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
@@ -12,7 +13,8 @@ import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
     GEReducer,
-    B2BReducer
+    B2BReducer,
+    AbroadReducer
 })
 
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

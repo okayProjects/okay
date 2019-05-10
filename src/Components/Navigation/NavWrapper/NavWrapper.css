@@ -1,4 +1,5 @@
 nav.nav {
+    position: relative;
     font-size: 19px;
     margin: 0 auto;
     padding: 10px;
@@ -15,6 +16,20 @@ nav.nav {
     padding-right: 100px;
 }
 
+.nav div.items-in-basket {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(0, -50%);
+    font-size: 25px;
+    color: #433343;
+    font-weight: bold;
+}
+
+.nav div.items-in-basket span {
+    /* margin: 0 -20px; */
+    color: red;
+}
 @media(max-width: 1024px) {
     .nav ul {
         flex-direction: column;

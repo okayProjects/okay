@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionTypes from '../../../Store/actions';
+import Form from '../../Form/Form';
 
 class Basket extends Component {
 
     render() {
 
-        const courses = this.props.generalEnglishCourses.map(course => {
+        const courses = this.props.orderedCourses.map(course => {
 
             return (
                 <div key={course.id}>
@@ -22,8 +23,8 @@ class Basket extends Component {
         )
         return (
             <>
-                <h1>I am BASKET</h1>
                 {courses}
+                {this.props.orderedCourses.length <= 0 ? <h1>Twój koszyk jest pusty</h1> : <Form />}
             </>
 
         );
@@ -33,7 +34,7 @@ class Basket extends Component {
 const mapStateToProps = state => {
 
     return {
-        generalEnglishCourses: state.GEReducer.orders.concat(state.B2BReducer.orders)
+        orderedCourses: state.GEReducer.orders.concat(state.B2BReducer.orders, state.AbroadReducer.orders)
     }
 }
 

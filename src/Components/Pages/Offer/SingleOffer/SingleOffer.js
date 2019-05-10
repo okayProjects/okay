@@ -2,6 +2,7 @@ import React from 'react';
 import './SingleOffer.css';
 import GeneralEnglishCourses from '../../../Courses/GECourses/GeneralEnglishCourses';
 import BusinessCourses from '../../../Courses/BusinessCourses/BusinessCourses';
+import AbroadCourses from '../../../Courses/AbroadCourses/AbroadCourses';
 import ge1 from '../../../../images/GESlides/pic1.jpg';
 import ge2 from '../../../../images/GESlides/pic2.jpg';
 import ge3 from '../../../../images/GESlides/pic3.jpg';
@@ -9,6 +10,7 @@ import b2b1 from '../../../../images/Business/img1.jpg';
 import b2b2 from '../../../../images/Business/img2.jpg';
 import b2b3 from '../../../../images/Business/img3.jpg';
 import video from '../../../../images/video/pencils.mov'
+
 
 
 const abroad = [
@@ -65,7 +67,7 @@ const SingleOffer = (props) => {
                     <h1>{item.heading}</h1>
                 </React.Fragment>);
 
-            header = <div className='carousel-wrapper'>{slidesBusiness}{h1Business}</div>
+            header = <div className='carousel-wrapper'>{slidesBusiness}{h1Business}</div>;
             main = <BusinessCourses />
             break;
 
@@ -79,7 +81,8 @@ const SingleOffer = (props) => {
                 <React.Fragment key={item.heading}>
                     <h1>{item.heading}</h1>
                 </React.Fragment>);
-            header = <div className='carousel-wrapper'>{slidesAbroad}{h1Abroad}</div>
+            header = <div className='carousel-wrapper'>{slidesAbroad}{h1Abroad}</div>;
+            main = <AbroadCourses />
             break
         default: header = null;
     }

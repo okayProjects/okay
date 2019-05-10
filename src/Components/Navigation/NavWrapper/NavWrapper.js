@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Logo from '../../../Logo/Logo';
 import './NavWrapper.css';
 
@@ -11,23 +12,39 @@ const menuList = [
     { name: 'koszyk', path: '/orders' }
 ];
 
-const NavWrapper = (props) => {
+class NavWrapper extends Component {
 
-    const menu = menuList.map(item => (
-        <NavItem key={item.name}
-            path={item.path}
-            navItemName={item.name}
-            exact={item.exact} />
-    ))
+    render() {
+        const menu = menuList.map(item => (
+            <NavItem key={item.name}
+                path={item.path}
+                navItemName={item.name}
+                exact={item.exact} />
+        ));
 
-    return (
-        <nav className='nav'>
-            <ul>
-                <Link to='/'><Logo /></Link>
-                {menu}
-            </ul>
-        </nav>
-    );
+        const itemsInBasket = <div className='items-in-basket'>
+            <i className="fas fa-shopping-basket"></i>
+            <span>{this.props.totalOrderedCourses.length}</span>
+        </div>
+
+        return (
+            <nav className='nav'>
+                <ul>
+                    <Link to='/'><Logo /></Link>
+                    {menu}
+                    {this.props.totalOrderedCourses.length > 0 && itemsInBasket}
+                </ul>
+            </nav>
+        );
+    }
+
+
 }
 
-export default NavWrapper;
+const mapStateToProps = state => {
+    return {
+        totalOrderedCourses: state.GEReducer.orders.concat(state.B2BReducer.orders, state.AbroadReducer.orders)
+    }
+}
+
+export default connect(mapStateToProps)(NavWrapper);
