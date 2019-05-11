@@ -32,7 +32,7 @@ class Basket extends Component {
 }
 
 const mapStateToProps = state => {
-
+    console.log(state.GEReducer.totalPrice);
     return {
         orderedCourses: state.GEReducer.orders.concat(state.B2BReducer.orders, state.AbroadReducer.orders)
     }

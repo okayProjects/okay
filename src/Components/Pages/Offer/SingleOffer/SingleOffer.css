@@ -30,6 +30,13 @@
     animation-delay: 10s;
 }
 
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
 @keyframes changeSlide {
     0% {
         opacity: 0;

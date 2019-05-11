@@ -1,0 +1,47 @@
+main section {
+    width: 70vw;
+    display: flex;
+    margin: 50px;
+    transition: 1s;
+
+} 
+
+.section-description-wrapper {
+    flex-basis: 75%;
+    padding: 20px;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 22px;
+}
+.section-img-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+main section:nth-child(even) .section-img-wrapper {
+    order: -1;
+}
+.section-img-wrapper img {
+    width: 100%;
+    height: 80%;
+    padding: 20px;
+}
+section.individual {
+    box-shadow: 1px 1px 1px 1px black;
+}
+section.one-to-one {
+    box-shadow: 1px 1px 1px 1px #DF0E99;
+}
+section.matura {
+    box-shadow: 1px 1px 1px 1px orange;
+}
+section.primary-exam {
+    box-shadow: 1px 1px 1px 1px green;
+}
+section.emergency-lesson {
+    box-shadow: 1px 1px 1px 1px blue;
+}
+
+section:hover {
+transform: translateX(calc(15% + 25px));
+}

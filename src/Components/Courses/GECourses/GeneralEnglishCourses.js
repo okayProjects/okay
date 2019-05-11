@@ -2,20 +2,31 @@ import React, { Component } from 'react';
 import SingleCourseItem from '../SingleCourseItems/SingleCourseItem';
 import { connect } from 'react-redux';
 import * as actionTypes from '../../../Store/actions';
+import './GeneralEnglishCourses.css';
+import pic1 from '../../../images/new/up.jpg';
+import pic2 from '../../../images/new/tongue.jpg';
+import pic3 from '../../../images/new/man.jpg';
+import pic4 from '../../../images/new/business.jpg';
+import pic5 from '../../../images/new/flag.jpg';
+
+
+const pics = [pic1, pic2, pic3, pic4, pic5];
 
 
 class GeneralEnglishCourses extends Component {
 
     render() {
 
-        const section = this.props.generalEnglishCourses.map(course =>
-            <section key={course.id}>
-                <SingleCourseItem sectionName={course.name}
-                    id={course.id}
-                    courseDescription={course.id}
-                    price={course.price}
-                    addToBasket={(id) => this.props.onToggleCourseBasket(id)} />
-            </section>
+        const section = this.props.generalEnglishCourses.map((course, index) =>
+
+            <SingleCourseItem key={course.id + index} sectionName={course.id}
+                id={course.id}
+                courseDescription={course.descp}
+                price={course.price}
+                src={pics[index]}
+                alt={'pic' + index}
+                addToBasket={(id) => this.props.onToggleCourseBasket(id)} />
+
         )
         return (
             <>
