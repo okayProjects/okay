@@ -5,6 +5,7 @@ import './OfferList.css';
 import geImg from '../../../../images/offer/ge.jpg';
 import businessImg from '../../../../images/offer/business.jpg';
 import abroadImg from '../../../../images/offer/abroad.jpg';
+import Button from '../../../UI/Buttons/Button';
 
 
 const offerList = [{ type: 'angielski ogólny', src: geImg, slogan: 'kursy indywidualne i grupowe, matura i egzamin po ósmej klasie' }, { type: 'angielski dla firm', src: businessImg, slogan: 'kursy indywidualne, grupowe i te "szyte na miarę" ' }, { type: 'angielski za granicą', src: abroadImg, slogan: "wakacje w Anglii - nauka poprzez relax międzynarodowej grupie" }];
@@ -18,9 +19,9 @@ const Offer = (props) => {
                 <h2>{product.type}</h2>
                 <p>{product.slogan}</p>
                 <div>
-                    <button>
+                    <Button btnType='offer-info-button'>
                         <Link to={`${props.match.path}/${product.type}`}>{product.type}</Link>
-                    </button>
+                    </Button>
                 </div>
             </div>
             <img src={product.src} alt={product.type} />

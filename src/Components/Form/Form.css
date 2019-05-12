@@ -1,29 +1,41 @@
 .form {
-    text-align: center;
-    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 2px 2px #322;
+  }
+
+  .form form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .form label {
+    font-size: 18px;
+   text-align: center;
+   flex-basis: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
   }
   
   .form input {
     margin-left: 10px;
     margin-top: 15px;
+    flex-basis: 60%;
+    width: 50%;
+    padding: 10px;
   }
   
   .form input[type='checkbox']{
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-left: -50px;
-  }
-  
-  .form label {
-    display: block;
+    margin: 20px 5px;
+    text-align: center;
+    flex-basis: 3%;
   }
   
   .form button {
     margin: 20px;
-  }
-  
-  .form span {
-    color: red;
-    font-size: 10px;
-    margin-left: 10px;
+    flex-basis: 40%;
   }

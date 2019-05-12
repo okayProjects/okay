@@ -1,0 +1,49 @@
+.basket-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.basket-wrapper .basket {
+    width: 55%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ddd;
+    box-shadow: 2px 2px 2px 2px #322;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.basket-wrapper .basket:nth-child(odd){
+    background-color: rgb(150, 137, 137);
+}
+
+.basket h1 {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 5px 0;
+    text-transform: capitalize;
+}
+
+.basket span {
+    flex-basis: 100%;
+    text-align: center;
+   font-size: 18px;
+}
+.basket button {
+    flex-basis: 15%;
+    margin: 20px;
+    font-size: 18px;
+}
+
+.basket-wrapper h2 {
+    padding: 20px;
+}
+
+.basket-wrapper .form {
+    padding: 10px;
+    width: 55%;
+}

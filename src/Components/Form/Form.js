@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '../UI/Buttons/Button';
 import './Form.css';
 
 class Form extends Component {
@@ -114,25 +115,23 @@ class Form extends Component {
     render() {
         return (
             <div className="form">
+                <h1>Wypełnij formularz</h1>
                 <form onSubmit={this.submitHandler} noValidate>
-                    <label>Twoje imię
-                <input type='text' name='username' value={this.state.username} onChange={this.changeHandler}></input>{this.state.errors.username && <span>{this.messages.username}</span>}
-                    </label>
-                    <label>Twoje nazwisko
-                <input type='text' name='usersurname' value={this.state.usersurname} onChange={this.changeHandler}></input>{this.state.errors.usersurname && <span>{this.messages.usersurname}</span>}
-                    </label>
+
+                    <input type='text' name='username' placeholder='Twoje imię' value={this.state.username} onChange={this.changeHandler}></input>{this.state.errors.username && <span>{this.messages.username}</span>}
+
+                    <input type='text' name='usersurname' placeholder='Twoje nazwisko' value={this.state.usersurname} onChange={this.changeHandler}></input>{this.state.errors.usersurname && <span>{this.messages.usersurname}</span>}
 
 
-                    <label>Twój email
-                <input type='email' name='useremail' value={this.state.useremail} onChange={this.changeHandler}></input>{this.state.errors.useremail && <span>{this.messages.useremail}</span>}
-                    </label>
+                    <input type='email' name='useremail' placeholder='Twój email' value={this.state.useremail} onChange={this.changeHandler}></input>{this.state.errors.useremail && <span>{this.messages.useremail}</span>}
+
 
                     <label>
                         <input type='checkbox' name='accept' checked={this.state.accept} onChange={this.changeHandler}></input>Zgodę wyrażam wszelaką
                     </label>
                     {this.state.errors.accept && <span>{this.messages.accept}</span>}
-                    <button>Anuluj</button>
-                    <button>Wyślij</button>
+                    <Button btnType='offer-info-button'>Anuluj</Button>
+                    <Button btnType='offer-info-button'>Wyślij</Button>
                 </form>
                 {this.state.formSentMessage && <h4>{this.state.formSentMessage}</h4>}
             </div>

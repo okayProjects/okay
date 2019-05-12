@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Logo from '../../../Logo/Logo';
+import Logo from '../../UI/Logo/Logo';
 import './NavWrapper.css';
 
 import NavItem from '../NavItem/NavItem';

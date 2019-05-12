@@ -25,8 +25,7 @@ class GeneralEnglishCourses extends Component {
                 price={course.price}
                 src={pics[index]}
                 alt={'pic' + index}
-                addToBasket={(id) => this.props.onToggleCourseBasket(id)} />
-
+                addToBasket={(id, price) => this.props.onToggleCourseBasket(id, price)} />
         )
         return (
             <>
@@ -46,7 +45,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onToggleCourseBasket: (id) => dispatch({ type: actionTypes.ADD_COURSE_TO_BASKET, id: id })
+        onToggleCourseBasket: (id, price) => dispatch({ type: actionTypes.ADD_COURSE_TO_BASKET, id: id, price })
     }
 }
 

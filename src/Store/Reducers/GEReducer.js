@@ -59,6 +59,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 orders: state.orders.concat(state.generalEnglishCourses.filter(course => course.id === action.id)),
+
             }
         case actionTypes.REMOVE_COURSE_FROM_BASKET:
             const newOrders = state.orders.filter(order => order.id !== action.id)
