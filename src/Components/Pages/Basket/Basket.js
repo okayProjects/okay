@@ -19,16 +19,12 @@ class Basket extends Component {
         const courses = this.props.orderedCourses.map(course => {
             return (
                 <div key={course.id} className='basket'>
-
                     <h1>Zamawiasz {course.name}</h1>
                     <span>{`Cena tego kursu to ${course.price} PLN`}</span>
-                    <Button click={() => this.props.onToggleCourseBasket(course.id)} btnType='offer-info-button'>Usuń</Button>
-
+                    <Button click={() => this.props.onRemoveCourseFromBasket(course.id)} btnType='offer-info-button'>Usuń</Button>
                 </div>
             )
-        }
-        );
-
+        });
 
         return (
             <div className='basket-wrapper'>
@@ -52,7 +48,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onToggleCourseBasket: (id) => dispatch({ type: actionTypes.REMOVE_COURSE_FROM_BASKET, id: id })
+        onRemoveCourseFromBasket: (id) => dispatch({ type: actionTypes.REMOVE_COURSE_FROM_BASKET, id: id })
     }
 }
 

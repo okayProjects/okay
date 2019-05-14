@@ -10,7 +10,7 @@ const SingleCourseItem = (props) => {
                     <h2>{props.sectionName}</h2>
                     <article>{props.courseDescription}</article>
                     <span>{`Cena całego kursu: ${props.price} PLN`}</span>
-                    <Button click={() => props.addToBasket(props.id, props.price)} btnType='Shake'>dodaj do koszyka</Button>
+                    <Button click={() => props.addToBasket(props.course)} btnType='Shake'>dodaj do koszyka</Button>
                 </div>
                 <div className='section-img-wrapper'>
                     <img src={props.src} alt={props.alt} />
