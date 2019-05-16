@@ -5,7 +5,7 @@
 
 .carousel-wrapper {
     height: 50vh;
-    width: 80vw;
+    width: 92vw;
     position: relative;
     overflow: hidden;
     margin: 50px auto;
@@ -123,3 +123,12 @@ main {
     min-width: 100%;
     min-height: 100%;
 }
+
+@media(max-width: 1024px){
+    .carousel-wrapper, .video-wrapper {
+    height: 20vh;
+    margin: 0;
+}
+}
+
+

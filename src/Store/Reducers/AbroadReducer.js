@@ -19,7 +19,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 orders: newOrders
-
+            }
+        case actionTypes.CLEAR_BASKET_AFTER_FORM_SENT:
+            return {
+                ...state,
+                orders: []
             }
         default: return state;
     }

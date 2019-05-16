@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actionTypes from '../../Store/actions';
 import Button from '../UI/Buttons/Button';
 import './Form.css';
 
@@ -9,6 +12,7 @@ class Form extends Component {
         useremail: '',
         accept: false,
         formSentMessage: '',
+        redirect: false,
         errors: {
             username: false,
             useremail: false,
@@ -28,10 +32,13 @@ class Form extends Component {
         setTimeout(() => {
             if (this.state.formSentMessage !== '') {
                 this.setState(prevState => {
-                    return { formSentMessage: prevState.formSentMessage = '' };
+                    return {
+                        formSentMessage: prevState.formSentMessage = '',
+                        redirect: prevState.redirect = true
+                    };
                 });
             }
-        }, 2000);
+        }, 4000);
     }
 
     changeHandler = (e) => {
@@ -113,8 +120,16 @@ class Form extends Component {
     }
 
     render() {
+        let style = ['form'];
+        if (this.state.formSentMessage !== '') {
+            style = ['form', ['none']].join(' ');
+        }
+
+        if (this.state.redirect) {
+            this.props.onClearOrderAfterFormSent();
+        }
         return (
-            <div className="form">
+            <div className={style}>
                 <h1>Wypełnij formularz</h1>
                 <form onSubmit={this.submitHandler} noValidate>
 
@@ -130,13 +145,22 @@ class Form extends Component {
                         <input type='checkbox' name='accept' checked={this.state.accept} onChange={this.changeHandler}></input>Zgodę wyrażam wszelaką
                     </label>
                     {this.state.errors.accept && <span>{this.messages.accept}</span>}
-                    <Button btnType='offer-info-button'>Anuluj</Button>
-                    <Button btnType='offer-info-button'>Wyślij</Button>
+                    <div className='form-button-wrapper'>
+                        <Button btnType='offer-info-button'>Anuluj</Button>
+                        <Button btnType='offer-info-button'>Wyślij</Button>
+                    </div>
                 </form>
                 {this.state.formSentMessage && <h4>{this.state.formSentMessage}</h4>}
+                {this.state.redirect && <Redirect to='/offer' />}
             </div>
         );
     }
 }
 
-export default Form;
+const mapDispatchToProps = dispatch => {
+    return {
+        onClearOrderAfterFormSent: () => dispatch({ type: actionTypes.CLEAR_BASKET_AFTER_FORM_SENT })
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Form);

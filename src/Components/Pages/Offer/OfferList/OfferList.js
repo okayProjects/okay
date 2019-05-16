@@ -31,11 +31,8 @@ const Offer = (props) => {
     return (
         <div className='offer-list'>
             <NavWrapper />
-
             <div className='offer-wrapper'>
-
                 {products}
-
             </div>
         </div>
     )

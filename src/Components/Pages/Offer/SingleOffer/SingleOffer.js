@@ -3,27 +3,27 @@ import './SingleOffer.css';
 import GeneralEnglishCourses from '../../../Courses/GECourses/GeneralEnglishCourses';
 import BusinessCourses from '../../../Courses/BusinessCourses/BusinessCourses';
 import AbroadCourses from '../../../Courses/AbroadCourses/AbroadCourses';
-import ge1 from '../../../../images/GESlides/pic1.jpg';
-import ge2 from '../../../../images/GESlides/pic2.jpg';
-import ge3 from '../../../../images/GESlides/pic3.jpg';
-import b2b1 from '../../../../images/Business/img1.jpg';
-import b2b2 from '../../../../images/Business/img2.jpg';
-import b2b3 from '../../../../images/Business/img3.jpg';
+import abr1 from '../../../../images/Abroad/abr1.jpg';
+import abr2 from '../../../../images/Abroad/abr2.jpg';
+import abr3 from '../../../../images/Abroad/abr3.jpg';
+import b2b1 from '../../../../images/Business/b2b1.jpg';
+import b2b2 from '../../../../images/Business/b2b2.jpg';
+import b2b3 from '../../../../images/Business/b2b3.jpg';
 import video from '../../../../images/video/pencils.mov'
 
 
 
 const abroad = [
     {
-        src: ge1,
+        src: abr1,
         heading: 'abroad1'
     },
     {
-        src: ge2,
+        src: abr2,
         heading: 'abroad2'
     },
     {
-        src: ge3,
+        src: abr3,
         heading: 'abroad3'
     },
 ]

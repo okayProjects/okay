@@ -1,8 +1,13 @@
 .form {
+  position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 2px 2px #322;
+  }
+
+  div.none form, div.none h1 {
+    display: none;
   }
 
   .form form {
@@ -14,11 +19,7 @@
 
   .form label {
     font-size: 18px;
-   text-align: center;
-   flex-basis: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    flex-basis: 60%;
   }
   
   .form input {
@@ -30,12 +31,36 @@
   }
   
   .form input[type='checkbox']{
-    margin: 20px 5px;
+    margin: 20px 0;
     text-align: center;
     flex-basis: 3%;
+    width: 30px;
+  }
+
+  div.form-button-wrapper {
+    flex-basis: 60%;
+    display: flex;
+    justify-content: space-between;
   }
   
   .form button {
-    margin: 20px;
+    margin: 20px 0;
     flex-basis: 40%;
+  }
+
+  div.form form span {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    color: red;
+  }
+  div.form h4 {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    width: 100%;
+    margin-top: 50px;
+    transform: translate(-50%, 0);
+    font-size: 50px;
+    color: red;
   }

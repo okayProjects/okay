@@ -78,3 +78,8 @@ main .single-section:nth-child(4) h2, main .single-section:nth-child(4) span {
     color: blue;
 }
 
+@media(max-width: 1024px){
+    .single-section {
+        flex-direction: column;
+    }
+}
