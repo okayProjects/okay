@@ -38,7 +38,7 @@ class Form extends Component {
                     };
                 });
             }
-        }, 4000);
+        }, 8000);
     }
 
     changeHandler = (e) => {
