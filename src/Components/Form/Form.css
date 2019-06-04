@@ -1,9 +1,17 @@
 .form {
   position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 2px 2px 2px #322;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 2px 2px 2px 2px #322;
+            box-shadow: 2px 2px 2px 2px #322;
   }
 
   div.none form, div.none h1 {
@@ -11,21 +19,28 @@
   }
 
   .form form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     width: 100%;
   }
 
   .form label {
     font-size: 18px;
-    flex-basis: 60%;
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
   }
   
   .form input {
     margin-left: 10px;
     margin-top: 15px;
-    flex-basis: 60%;
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
     width: 50%;
     padding: 10px;
   }
@@ -33,24 +48,35 @@
   .form input[type='checkbox']{
     margin: 20px 0;
     text-align: center;
-    flex-basis: 3%;
+    -ms-flex-preferred-size: 3%;
+        flex-basis: 3%;
     width: 30px;
   }
 
   div.form-button-wrapper {
-    flex-basis: 60%;
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   
   .form button {
     margin: 20px 0;
-    flex-basis: 40%;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
   }
 
   div.form form span {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-left: 10px;
     color: red;
   }
@@ -60,7 +86,8 @@
     top: 60%;
     width: 100%;
     margin-top: 50px;
-    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
     font-size: 50px;
     color: red;
   }

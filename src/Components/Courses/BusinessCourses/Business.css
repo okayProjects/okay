@@ -1,24 +1,36 @@
 main section {
     width: 70vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 50px;
+    -webkit-transition: 1s;
     transition: 1s;
 } 
 
 .section-description-wrapper {
-    flex-basis: 75%;
+    -ms-flex-preferred-size: 75%;
+        flex-basis: 75%;
     padding: 10px;
     text-align: justify;
     font-size: 18px;
     line-height: 22px;
 }
 .section-img-wrapper {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 main section:nth-child(even) .section-img-wrapper {
-    order: -1;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
 }
 .section-img-wrapper img {
     width: 100%;
@@ -27,27 +39,34 @@ main section:nth-child(even) .section-img-wrapper {
     border-radius: 30px;
 }
 main .single-section:nth-of-type(1) {
-    box-shadow: 1px 1px 1px 1px blue;
+    -webkit-box-shadow: 1px 1px 1px 1px blue;
+            box-shadow: 1px 1px 1px 1px blue;
 }
 main .single-section:nth-of-type(2) {
-    box-shadow: 1px 1px 1px 1px #DF0E99;
+    -webkit-box-shadow: 1px 1px 1px 1px #DF0E99;
+            box-shadow: 1px 1px 1px 1px #DF0E99;
 }
 main .single-section:nth-of-type(3) {
-    box-shadow: 1px 1px 1px 1px orange;
+    -webkit-box-shadow: 1px 1px 1px 1px orange;
+            box-shadow: 1px 1px 1px 1px orange;
 }
 main .single-section:nth-of-type(4) {
-    box-shadow: 1px 1px 1px 1px green;
+    -webkit-box-shadow: 1px 1px 1px 1px green;
+            box-shadow: 1px 1px 1px 1px green;
 }
 main .single-section:nth-of-type(5) {
-    box-shadow: 1px 1px 1px 1px blue;
+    -webkit-box-shadow: 1px 1px 1px 1px blue;
+            box-shadow: 1px 1px 1px 1px blue;
 }
 
 section:hover {
-transform: translateX(calc(15% + 25px));
+-webkit-transform: translateX(calc(15% + 25px));
+        transform: translateX(calc(15% + 25px));
 }
 
 .section-description-wrapper article {
     padding: 10px;
+    -webkit-transition: .5s;
     transition: .5s;
 }
 

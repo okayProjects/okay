@@ -12,8 +12,11 @@ nav.nav {
 
 .nav ul {
     /* width: 90vw; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     list-style-type: none;
     /* background-color: red; */
     padding-right: 100px;
@@ -27,17 +30,27 @@ nav.nav {
     font-size: 25px;
     color: #433343;
     font-weight: bold;
-    transform: scale(1);
-    animation: basketSpan .3s linear;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation: basketSpan .3s linear;
+            animation: basketSpan .3s linear;
 }
 
 .nav div.items-in-basket span {
     color: red;
 }
 
+@-webkit-keyframes basketSpan {
+    to {
+        -webkit-transform: scale(2);
+                transform: scale(2);
+    }
+}
+
 @keyframes basketSpan {
     to {
-        transform: scale(2);
+        -webkit-transform: scale(2);
+                transform: scale(2);
     }
 }
 

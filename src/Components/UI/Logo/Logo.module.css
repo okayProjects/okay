@@ -9,7 +9,8 @@
 .Logo span:first-child {
     display: inline-block;
     color: rgb(223, 14, 153);
-    transform: skew(-15deg);
+    -webkit-transform: skew(-15deg);
+            transform: skew(-15deg);
     font-size: 40px;
 }
 .Logo span:nth-child(2) {
@@ -27,6 +28,8 @@
 
 @media(max-width:1024px){
     .Logo {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin-right: 20px;
         font-size: 1.2em;
