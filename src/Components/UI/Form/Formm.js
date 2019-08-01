@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import * as actionTypes from '../../Store/actions';
+// import { connect } from 'react-redux';
+// import * as actionTypes from '../../Store/actions';
 import Button from '../UI/Buttons/Button';
 import './Form.css';
 
@@ -10,13 +10,14 @@ class Form extends Component {
         username: '',
         usersurname: '',
         useremail: '',
+        userpassword: '',
         accept: false,
         formSentMessage: '',
         redirect: false,
         errors: {
             username: false,
             useremail: false,
-            password: false,
+            userpassword: false,
             accept: false
         }
     }
@@ -24,6 +25,7 @@ class Form extends Component {
     messages = {
         username: 'Nazwa musi zawierać minimum 3 znaki',
         useremail: 'Email musi zawierać @',
+        userpassword: 'Hasło musi zawierać co najmnie 6 znaków',
         usersurname: 'Nie może być krótszy niż 3 znaki',
         accept: 'Potwierdź akceptację warunków'
     }
@@ -46,7 +48,7 @@ class Form extends Component {
         const value = e.target.value;
         const type = e.target.type;
 
-        if (type === 'text' || type === 'email') {
+        if (type === 'text' || type === 'email' || type === 'password') {
             this.setState(prevState => {
                 return { [name]: prevState[name] = value };
             });
@@ -66,12 +68,14 @@ class Form extends Component {
                 {
                     username: '',
                     usersurname: '',
+                    userpassword: '',
                     useremail: '',
                     accept: false,
                     formSentMessage: 'Dziękujemy za wysłanie formularza',
                     errors: {
                         username: false,
                         useremail: false,
+                        userpassword: false,
                         accept: false
                     }
                 }
@@ -81,17 +85,20 @@ class Form extends Component {
                 errors: {
                     username: !validation.username,
                     usersurname: !validation.usersurname,
+                    userpassword: !validation.userpassword,
                     useremail: !validation.useremail,
                     accept: !validation.accept
                 }
             })
         }
+
     }
 
     validation = () => {
         let useremail = false;
         let username = false;
         let usersurname = false;
+        let userpassword = false;
         let accept = false;
         let formCorrect = false;
 
@@ -104,10 +111,13 @@ class Form extends Component {
         if (this.state.useremail.indexOf('@') !== -1) {
             useremail = true;
         }
+        if (this.state.userpassword.length >= 6) {
+            userpassword = true;
+        }
         if (this.state.accept) {
             accept = true;
         }
-        if (username && accept && useremail) {
+        if (username && accept && useremail && userpassword) {
             formCorrect = true;
         }
         return ({
@@ -115,19 +125,21 @@ class Form extends Component {
             accept,
             useremail,
             formCorrect,
-            usersurname
-        })
-    }
+            usersurname,
+            userpassword
+        });
+    };
 
     render() {
+
         let style = ['form'];
         if (this.state.formSentMessage !== '') {
             style = ['form', ['none']].join(' ');
         }
 
-        if (this.state.redirect) {
-            this.props.onClearOrderAfterFormSent();
-        }
+        // if (this.state.redirect) {
+        //     this.props.onClearOrderAfterFormSent();
+        // }
         return (
             <div className={style}>
                 <h1>Wypełnij formularz</h1>
@@ -139,6 +151,8 @@ class Form extends Component {
 
 
                     <input type='email' name='useremail' placeholder='Twój email' value={this.state.useremail} onChange={this.changeHandler}></input>{this.state.errors.useremail && <span>{this.messages.useremail}</span>}
+
+                    <input type='password' name='userpassword' placeholder='Twóje hasło' value={this.state.userpassword} onChange={this.changeHandler}></input>{this.state.errors.userpassword && <span>{this.messages.userpassword}</span>}
 
 
                     <label>
@@ -154,13 +168,13 @@ class Form extends Component {
                 {this.state.redirect && <Redirect to='/offer' />}
             </div>
         );
-    }
-}
+    };
+};
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onClearOrderAfterFormSent: () => dispatch({ type: actionTypes.CLEAR_BASKET_AFTER_FORM_SENT })
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         onClearOrderAfterFormSent: () => dispatch({ type: actionTypes.CLEAR_BASKET_AFTER_FORM_SENT })
+//     }
+// }
 
-export default connect(null, mapDispatchToProps)(Form);
+export default Form;

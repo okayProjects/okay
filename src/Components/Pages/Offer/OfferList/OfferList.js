@@ -32,6 +32,7 @@ const Offer = (props) => {
         <div className='offer-list'>
             <NavWrapper />
             <div className='offer-wrapper'>
+                <h1>Jaka kategoria kursów cię interesuje</h1>
                 {products}
             </div>
         </div>

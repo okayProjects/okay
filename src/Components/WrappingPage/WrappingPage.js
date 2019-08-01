@@ -5,6 +5,8 @@ import OfferList from '../Pages/Offer/OfferList/OfferList';
 import PartnerZone from '../Pages/PartnerZone/PartnerZone';
 import OfferPage from '../Pages/Offer/OfferPage/OfferPage';
 import Basket from '../Pages/Basket/Basket';
+import Auth from '../Auth/Auth';
+// import Form from '../Form/Form';
 
 
 
@@ -18,6 +20,8 @@ class WrappingPage extends Component {
                     <Route path='/offer' component={OfferList} />
                     <Route path='/partnerZone' component={PartnerZone} />
                     <Route path='/orders' component={Basket} />
+                    <Route path='/auth' component={Auth} />
+                    {/* <Route path='/form' component={Form} /> */}
                     <Route path='/' component={Home} />
                 </Switch>
 

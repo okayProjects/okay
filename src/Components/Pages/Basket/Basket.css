@@ -6,7 +6,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    min-height: 100vh;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -59,7 +58,100 @@
     padding: 20px;
 }
 
-.basket-wrapper .form {
+
+
+
+.basket-form-wrapper {
+    width: 55vw;
+    margin: 50px 0;
+}
+
+.basket-form-wrapper h1 {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #322;
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+.basket-form-wrapper form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5px 10px 20px;
+    border: 1px solid #322;
+    /* -webkit-box-shadow: 2px 2px 2px 2px #322;
+            box-shadow: 2px 2px 2px 2px #322; */
+  }
+
+  .basket-form-wrapper form input,
+  .basket-form-wrapper form textarea {
+      padding: 5px;
+      font-size: 16px;
+      margin: 10px;
+      border: 1px solid #322;
+  }
+  .basket-form-wrapper form input:first-child,
+  .basket-form-wrapper form input:nth-of-type(2),
+  .basket-form-wrapper form input:nth-of-type(3) {
+      flex-basis: 30%;
+  }
+
+  .basket-form-wrapper form textarea,
+  .basket-form-wrapper .accept {
+      flex-basis: 100%;
+  }
+
+  .basket-form-wrapper form label {
+      font-size: 17px;
+      color: black;
+  }
+
+  .basket-form-wrapper .basketform-buttons-wrapper {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+  }
+  
+.workdays-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.workdays-wrapper::before {
+    content: 'Zaznacz tylko te dni i czas kiedy zdecydowanie NIE możesz mieć zajęć';
+    font-size: 18px;
     padding: 10px;
-    width: 55%;
+    font-weight: bold;
+}
+.workdays-wrapper div {
+    flex-basis: 100%;
+    color: #fff;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.workdays-wrapper .workdays-checkbox-wrapper {
+    background-color: rgb(85, 66, 66);
+    transition: .3s;
+} 
+.workdays-wrapper .workdays-checkbox-wrapper:hover {
+    background-color: #322;
+} 
+
+.workdays-wrapper .workdays-time-wrapper span {
+    color: black;
+    font-weight: bold;
+}
+
+.workdays-wrapper .workdays-checkbox-wrapper label {
+    color: #fff;
+    text-transform: capitalize;
+    width: 100%;
+    letter-spacing: 2px;
 }

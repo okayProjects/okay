@@ -1,6 +1,6 @@
 import React from 'react';
 import NavWrapper from '../../Navigation/NavWrapper/NavWrapper';
-import Banner from '../../Banner/Banner';
+import Auth from '../../Auth/Auth';
 import './PartnerZone.css';
 
 const PartnerZone = (props) => {
@@ -8,8 +8,8 @@ const PartnerZone = (props) => {
         <>
             <NavWrapper />
             <div className='partner-zone-wrapper'>
-                <Banner />
-                <div className='p-wrapper'><p>UNDER CONSTRUCTION</p></div>
+                <Auth />
+                {/* <div className='p-wrapper'><p>UNDER CONSTRUCTION</p></div> */}
             </div>
 
         </>

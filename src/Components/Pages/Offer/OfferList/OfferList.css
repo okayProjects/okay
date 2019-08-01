@@ -15,6 +15,7 @@
     height: calc(100vh - 60px);
     width: 90vw;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .single-offer-wrapper {
@@ -64,6 +65,7 @@
         flex-basis: 20%;
     text-transform: capitalize;
     font-family: 'Courier New', Courier, monospace;
+    color: #fff;
     text-shadow: 1px 1px #322;
 }
 
@@ -71,6 +73,8 @@
     text-transform: capitalize;
     font-size: 30px;
     padding: 0 20px;
+    color: #332222;
+    text-shadow: 2px 1px #fff;
 }
 
 .offer-info p {
@@ -118,4 +122,15 @@
                 flex-direction: column;
         height: 165vh;
     }
+}
+.offer-wrapper h1 {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 5%; 
+    background-color: #322;
+    padding: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-family: 'Courier New', Courier, monospace;
 }

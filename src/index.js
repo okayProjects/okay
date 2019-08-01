@@ -1,23 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import GEReducer from './Store/Reducers/GEReducer';
 import B2BReducer from './Store/Reducers/B2BReducer';
 import AbroadReducer from './Store/Reducers/AbroadReducer';
-import { Provider } from 'react-redux';
+import AuthReducer from './Store/Reducers/Auth';
+import OrderSubmitReducer from './Store/Reducers/OrderSubmit';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
 
 const rootReducer = combineReducers({
     GEReducer,
     B2BReducer,
-    AbroadReducer
-})
+    AbroadReducer,
+    OrderSubmitReducer,
+    AuthReducer
+});
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 
 const app = (<Provider store={store}>

@@ -8,7 +8,8 @@ import NavItem from '../NavItem/NavItem';
 
 const menuList = [
     { name: 'nasze kursy', path: '/offer' },
-    { name: 'strefa partnera', path: '/partnerZone' },
+    { name: 'strefa partnera/logowanie', path: '/partnerZone' },
+    // { name: 'logowanie', path: '/auth' },
     { name: 'koszyk', path: '/orders' }
 ];
 
@@ -37,8 +38,6 @@ class NavWrapper extends Component {
             </nav>
         );
     }
-
-
 }
 
 const mapStateToProps = state => {
