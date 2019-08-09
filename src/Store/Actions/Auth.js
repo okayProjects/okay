@@ -8,11 +8,12 @@ export const authStart = () => {
     };
 };
 
-export const authSuccess = (idToken, localId) => {
+export const authSuccess = (idToken, localId, email) => {
     return {
         type: actionTypes.AUTH_SUCCESS,
         idToken,
-        localId
+        localId,
+        email
     };
 };
 
@@ -23,6 +24,19 @@ export const authFailed = (error) => {
     };
 };
 
+export const logout = () => {
+    return {
+        type: actionTypes.LOGOUT
+    };
+};
+
+export const automaticallyLogout = (expiresIn) => {
+    return dispatch => {
+        setTimeout(() => {
+            dispatch(logout());
+        }, expiresIn * 1000);
+    };
+};
 
 export const auth = (email, password, submitName) => {
     return dispatch => {
@@ -40,7 +54,8 @@ export const auth = (email, password, submitName) => {
         }
         axios.post(url, authData)
             .then(response => {
-                dispatch(authSuccess(response.data.idToken, response.data.localId));
+                dispatch(authSuccess(response.data.idToken, response.data.localId, response.data.email));
+                dispatch(automaticallyLogout(response.data.expiresIn));
             })
             .catch(err => {
                 dispatch(authFailed(err.response.data.error));

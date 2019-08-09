@@ -18,14 +18,13 @@ nav.nav {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     list-style-type: none;
-    /* background-color: red; */
     padding-right: 100px;
 }
 
 .nav div.items-in-basket {
     position: absolute;
     top: 25%;
-    right: 10%;
+    right: 8%;
     /* transform: translate(0, -50%); */
     font-size: 25px;
     color: #433343;

@@ -6,16 +6,27 @@ import './NavWrapper.css';
 
 import NavItem from '../NavItem/NavItem';
 
-const menuList = [
-    { name: 'nasze kursy', path: '/offer' },
-    { name: 'strefa partnera/logowanie', path: '/partnerZone' },
-    // { name: 'logowanie', path: '/auth' },
-    { name: 'koszyk', path: '/orders' }
-];
-
 class NavWrapper extends Component {
 
     render() {
+
+        let menuList = [
+            { name: 'o mnie', path: '/about' },
+            { name: 'kursy', path: '/offer' },
+            { name: 'strefa partnera/logowanie', path: '/partnerZone' },
+            { name: 'koszyk', path: '/basket' }
+        ];
+
+        if (this.props.userIsAuthenticated) {
+            menuList = [
+                { name: 'o mnie', path: '/about' },
+                { name: 'kursy', path: '/offer' },
+                { name: this.props.loggedAs, path: '/partnerZone' },
+                { name: 'wyloguj', path: '/logout' },
+                { name: 'koszyk', path: '/basket' }
+            ];
+        }
+
         const menu = menuList.map(item => (
             <NavItem key={item.name}
                 path={item.path}
@@ -37,14 +48,16 @@ class NavWrapper extends Component {
                 </ul>
             </nav>
         );
-    }
-}
+    };
+};
 
 const mapStateToProps = state => {
 
     return {
-        totalOrderedCourses: state.GEReducer.orders.concat(state.B2BReducer.orders, state.AbroadReducer.orders)
-    }
-}
+        totalOrderedCourses: state.GEReducer.orders.concat(state.B2BReducer.orders, state.AbroadReducer.orders),
+        userIsAuthenticated: state.AuthReducer.token !== null,
+        loggedAs: state.AuthReducer.email
+    };
+};
 
 export default connect(mapStateToProps)(NavWrapper);

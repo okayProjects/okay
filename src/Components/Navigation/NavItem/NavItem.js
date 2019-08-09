@@ -5,7 +5,8 @@ import './NavItem.css';
 const NavItem = (props) => {
     return (
         <li>
-            <NavLink to={props.path}
+            <NavLink
+                to={props.path}
                 exact={props.exact ? props.exact : false}>
                 {props.navItemName}
             </NavLink>

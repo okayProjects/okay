@@ -3,8 +3,10 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 100vw;
     height: 100vh;
+    background-image: url('../../images/auth/plush-design-studio-l3N9Q27zULw-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .form {
@@ -15,14 +17,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    -webkit-box-shadow: 2px 2px 2px 2px #322;
-            box-shadow: 2px 2px 2px 2px #322;        
-    transition: .5s;     
+    align-items: center;  
+    transition: .8s;     
 }
 
 .form:hover {
-    background-color: #DDDDDD;
+    background-color: rgb(143, 139, 139);
+    -webkit-box-shadow: 2px 2px 2px 2px #322;
+    box-shadow: 1px 3px 3px #322;  
+    transform: scale(1.1); 
+    border-radius: 5px;
 }
 
 .form h3 {
@@ -30,6 +34,13 @@
     color: #322;
     font-size: 20px;
     flex-basis: 20%;
+    font-family: 'Courier New', Courier, monospace;
+    transition: .5s;
+}
+
+.form:hover h3 {
+    color: #fff;    
+    font-weight: 100;
 }
 
 .form span {

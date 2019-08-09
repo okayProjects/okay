@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 orders: newOrders
             }
-        case actionTypes.CLEAR_BASKET_AFTER_FORM_SENT:
+        case actionTypes.CLEAR_BASKET:
             return {
                 ...state,
                 orders: []

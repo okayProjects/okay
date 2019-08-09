@@ -1,0 +1,83 @@
+.orderinputs-wrapper {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.orderinputs-wrapper  input,
+.orderinputs-wrapper  textarea {
+      padding: 5px;
+      font-size: 16px;
+      margin: 10px;
+      border: 1px solid #322;
+}
+
+.orderinputs-wrapper > input {
+    flex-basis: 30%;
+}
+
+.orderinputs-wrapper textarea {
+    flex-basis: 100%;
+}
+
+.basket-form-wrapper .basketform-button-wrapper {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.workdays-wrapper {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.workdays-wrapper h3 {
+    flex-basis: 100%;
+    padding: 5px;
+}
+
+.workdays-wrapper div {
+    flex-basis: 45%;
+    color: #fff;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+
+.workdays-wrapper .workdays-checkbox-wrapper {
+    background-color: rgb(85, 66, 66);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 80%;
+    padding: 0 10px;
+    text-align: start;
+    transition: .5s;
+} 
+.workdays-wrapper .workdays-checkbox-wrapper:hover {
+    background-color: #322;
+    transform: translateX(5px);
+} 
+
+.workdays-time-wrapper input {
+    flex-grow: 1;
+}
+
+
+.workdays-wrapper .workdays-time-wrapper span {
+    color: black;
+    font-weight: bold;
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.workdays-wrapper .workdays-checkbox-wrapper label {
+    text-transform: capitalize;
+    width: 100%;
+    letter-spacing: 2px;
+    margin-left: 10px;
+}

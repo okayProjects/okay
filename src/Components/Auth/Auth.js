@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import NavWrapper from '../Navigation/NavWrapper/NavWrapper';
 import Form from '../UI/Form/Form';
 import Button from '../UI/Buttons/Button';
@@ -169,7 +169,7 @@ class Auth extends Component {
                         </form>
                     </div>
                 </div>
-                {/* {this.state.logged && <Redirect to='/offer' />} */}
+                {this.props.userIsAuthenticated && <Redirect to='/basket' />}
             </>
         );
     };
@@ -178,7 +178,8 @@ class Auth extends Component {
 const mapStateToProps = state => {
     return {
         loading: state.AuthReducer.loading,
-        error: state.AuthReducer.error
+        error: state.AuthReducer.error,
+        userIsAuthenticated: state.AuthReducer.token !== null
     };
 };
 

@@ -1,157 +1,127 @@
 .basket-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.basket-empty-message {
+    width: 75%;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #fff;
+    background-color: #322;
+    padding: 20px 30px;
+    font-size: 38px;
     margin-top: 70px;
 }
-
-.basket-wrapper .basket {
-    width: 55%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #ddd;
-    -webkit-box-shadow: 2px 2px 2px 2px #322;
-            box-shadow: 2px 2px 2px 2px #322;
-    display: -webkit-box;
-    display: -ms-flexbox;
+.basket-sent-message-wrapper {
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    letter-spacing: 3px;
+    color: #fff;
+    background-color: #322;
+    padding: 20px 30px;
+    font-size: 38px;
+    margin-top: 70px;
+    border-radius: 5px;
 }
 
-.basket-wrapper .basket:nth-child(odd){
-    background-color: rgb(150, 137, 137);
+.basket-sent-message-wrapper div:nth-child(1) {
+    align-self: center;
 }
 
-.basket h1 {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    text-align: center;
-    padding: 5px 0;
-    text-transform: capitalize;
+.basket-sent-message-wrapper div:nth-child(2) {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.basket span {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    text-align: center;
-   font-size: 18px;
-}
-.basket button {
-    -ms-flex-preferred-size: 15%;
-        flex-basis: 15%;
-    margin: 20px;
-    font-size: 18px;
-}
-
-.basket-wrapper h2 {
+.basket-sent-message-wrapper div:nth-child(2) p {
+    font-size: 30px;
     padding: 20px;
 }
-
+.basket-sent-message-wrapper div:nth-child(2) span {
+    font-size: 20px;
+    padding: 10px;
+}
 
 
 
 .basket-form-wrapper {
-    width: 55vw;
-    margin: 50px 0;
+    width: 75vw;
+    margin: 70px 0;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #ddd; */
+    border: 1px solid #322;
 }
 
-.basket-form-wrapper h1 {
-    text-align: center;
-    padding: 10px 20px;
-    background-color: #322;
+.basket-form-wrapper > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
     color: #fff;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+.basket-form-wrapper> div:first-child {
+    background-color: #322;
+}
+
+.basket-form-wrapper > div p:nth-child(1) {
+    font-size: 28px;
     letter-spacing: 3px;
 }
 
-.basket-form-wrapper form {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.basket-form {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 5px 10px 20px;
-    border: 1px solid #322;
-    /* -webkit-box-shadow: 2px 2px 2px 2px #322;
-            box-shadow: 2px 2px 2px 2px #322; */
-  }
-
-  .basket-form-wrapper form input,
-  .basket-form-wrapper form textarea {
-      padding: 5px;
-      font-size: 16px;
-      margin: 10px;
-      border: 1px solid #322;
-  }
-  .basket-form-wrapper form input:first-child,
-  .basket-form-wrapper form input:nth-of-type(2),
-  .basket-form-wrapper form input:nth-of-type(3) {
-      flex-basis: 30%;
-  }
-
-  .basket-form-wrapper form textarea,
-  .basket-form-wrapper .accept {
-      flex-basis: 100%;
-  }
-
-  .basket-form-wrapper form label {
-      font-size: 17px;
-      color: black;
-  }
-
-  .basket-form-wrapper .basketform-buttons-wrapper {
-      flex-basis: 100%;
-      display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-  }
-  
-.workdays-wrapper {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.workdays-wrapper::before {
-    content: 'Zaznacz tylko te dni i czas kiedy zdecydowanie NIE możesz mieć zajęć';
-    font-size: 18px;
-    padding: 10px;
-    font-weight: bold;
+.single-course-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    /* border: solid 1px #322; */
+    margin-top: 10px;
 }
-.workdays-wrapper div {
+
+.single-course-wrapper:nth-of-type(odd) {
+    background-color: rgb(170, 162, 162);
+}
+.single-course-wrapper:nth-of-type(even) {
+    background-color: rgb(102, 94, 94);
+}
+
+.single-course-wrapper>div {
     flex-basis: 100%;
-    color: #fff;
-    margin: 5px;
-    display: flex;
-    align-items: center;
+    text-align: center;
 }
 
-.workdays-wrapper .workdays-checkbox-wrapper {
-    background-color: rgb(85, 66, 66);
-    transition: .3s;
-} 
-.workdays-wrapper .workdays-checkbox-wrapper:hover {
-    background-color: #322;
-} 
+.single-course-wrapper .basket-button-wrapper {
+    text-align: start;
+}
 
-.workdays-wrapper .workdays-time-wrapper span {
-    color: black;
+.single-course-wrapper>div:first-of-type {
+    padding: 10px;
+    color: #322;
+}
+
+.accept {
+    margin-top: 20px;
+}
+
+.accept label {
+    color: initial;
+    font-size: 17px;
     font-weight: bold;
+    margin-left: 10px;
 }
 
-.workdays-wrapper .workdays-checkbox-wrapper label {
-    color: #fff;
-    text-transform: capitalize;
-    width: 100%;
-    letter-spacing: 2px;
+.accept input {
+    width: 15px;
+    height: 15px;
 }
