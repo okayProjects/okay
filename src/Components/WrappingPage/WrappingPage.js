@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Home from '../Pages/Home/Home';
 import OfferList from '../Pages/Offer/OfferList/OfferList';
 import PartnerZone from '../Pages/PartnerZone/PartnerZone';
@@ -7,10 +8,16 @@ import OfferPage from '../Pages/Offer/OfferPage/OfferPage';
 import Basket from '../Pages/Basket/Basket';
 import Auth from '../Auth/Auth';
 import Logout from '../Auth/Logout/Logout';
+import * as actions from '../../Store/Actions/actionsIndex';
 
 
 class WrappingPage extends Component {
     // state = {  }
+
+    componentWillMount() {
+        this.props.oncheckCurrentAuthState();
+    };
+
     render() {
         return (
             <>
@@ -23,10 +30,15 @@ class WrappingPage extends Component {
                     <Route path='/logout' component={Logout} />
                     <Route path='/' component={Home} />
                 </Switch>
-
             </>
         );
-    }
-}
+    };
+};
 
-export default WrappingPage;
+const mapDispatchToProps = dispatch => {
+    return {
+        oncheckCurrentAuthState: () => dispatch(actions.checkAuthStatus())
+    };
+};
+
+export default connect(null, mapDispatchToProps)(WrappingPage);

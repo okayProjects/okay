@@ -6,15 +6,27 @@
 }
 
 .basket-empty-message {
+    position: relative;
     width: 75%;
     text-align: center;
     letter-spacing: 3px;
     color: #fff;
     background-color: #322;
-    padding: 20px 30px;
+    padding: 50px 0;
     font-size: 38px;
     margin-top: 70px;
+    border-radius: 5px;
 }
+
+.basket-empty-message h5 {
+    margin-top: 50px;
+}
+
+.logo-empty-basket-message {
+    position: absolute;
+    left: 5%;
+}
+
 .basket-sent-message-wrapper {
     display: flex;
     flex-direction: column;

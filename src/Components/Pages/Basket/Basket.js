@@ -98,7 +98,8 @@ class Basket extends Component {
             client: this.state.user,
             order: this.props.orderedCourses,
             dateOfPurchasing: new Date().toISOString().slice(0, 10),
-            timeOfPurchasing: new Date().toISOString().slice(11, 19)
+            timeOfPurchasing: new Date().toISOString().slice(11, 19),
+            userId: this.props.userId
         };
 
         this.props.onOrderSubmitForm(orderData, this.props.token);
@@ -183,7 +184,11 @@ class Basket extends Component {
         });
 
         let basketMessage = (
-            <h1 className='basket-empty-message'>Twój koszyk jest pusty</h1>
+            <div className='basket-empty-message'>
+                <div className='logo-empty-basket-message' ><Logo /></div>
+                <h3>Twój koszyk jest pusty</h3>
+                <h5>Wybierz swój kurs</h5>
+            </div>
         );
         if (this.state.formSubmittedMessage) {
             basketMessage = (
@@ -242,7 +247,8 @@ const mapStateToProps = state => {
     return {
         orderedCourses: state.GEReducer.orders.concat(state.B2BReducer.orders, state.AbroadReducer.orders),
         token: state.AuthReducer.token,
-        userIsAuthenticated: state.AuthReducer.token !== null
+        userIsAuthenticated: state.AuthReducer.token !== null,
+        userId: state.AuthReducer.userId
     };
 };
 

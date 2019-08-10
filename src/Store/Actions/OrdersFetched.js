@@ -23,10 +23,11 @@ export const ordersFetchFail = (err) => {
 };
 
 
-export const fetchOrders = (token) => {
+export const fetchOrders = (token, userId) => {
     return dispatch => {
         dispatch(ordersFetchStart());
-        axios.get('https://okay-school.firebaseio.com/orders.json?auth=' + token)
+        const queryParams = '?auth=' + token + '&orderBy="userId"&equalTo="' + userId + '"';
+        axios.get('https://okay-school.firebaseio.com/orders.json' + queryParams)
             .then(res => {
                 const orders = [];
                 for (let key in res.data) {

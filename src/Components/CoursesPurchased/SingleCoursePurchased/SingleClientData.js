@@ -20,42 +20,40 @@ const SingleCoursePurchased = (props) => {
     const courseTypes = props.courses.map(course => (
         <ul key={course.id}>
             <li>
-                {`Kurs: ${course.name}, cena ${course.price}PLN`}
+                {`Rodzaj kursu: ${course.name}, cena ${course.price}PLN`}
             </li>
             <li>{`Data zamówienia: ${props.dateOfPurchasing}, godz. ${props.timeOfPurchasing}`}</li>
         </ul>
     ));
 
-
-    days.sort((a, b) => {
-
-        if (a.day > b.day) return 1;
-        if (a.day < b.day) return -1;
-        return 0
-
-    })
-
-
     const unavailableDays = days.map((day, index) => (
-        <ul key={day + index}>
-            <li>{`${day.day} od ${day.hourFrom} do ${day.hourTo}`}</li>
-        </ul>
+        <li key={day + index}>
+            <span>{day.day}</span>{` od ${day.hourFrom} do ${day.hourTo}`}</li>
     ));
 
     return (
         <>
             <div className='client-data-wrapper'>
-                <p>Student</p>
-                <span>{` ${props.studentPeronalData.userName}`}</span>
-                <span>{` ${props.studentPeronalData.userSurname},`}</span>
-                <span>{` tel. ${props.studentPeronalData.userTelephoneNumber}`}</span>
+                <div className='client-personal-data-wrapper'>
+                    <span>Student</span>
+                    <h5>{`${props.studentPeronalData.userName} ${props.studentPeronalData.userSurname}`}</h5>
+                    <span>{` tel. ${props.studentPeronalData.userTelephoneNumber}`}</span>
+                </div>
                 <div className='clients-ordered-courses'>
                     {courseTypes}
                 </div>
-                {props.studentPeronalData.userComments && <p>{`Uwagi: ${props.studentPeronalData.userComments}`}</p>}
+                {props.studentPeronalData.userComments && (
+                    <div className='clients-order-comments'>
+                        <span>Twoje uwagi</span>
+                        <p>{props.studentPeronalData.userComments}</p>
+                    </div>
+                )}
                 {days.length > 0 && <div className='unavailable-days-wrapper'>
-                    <p>Zdecydowanie nie mogę mieć zajęć w:</p>
-                    {unavailableDays}
+                    <span>Zdecydowanie nie mogę mieć zajęć w:</span>
+                    <ul>
+                        {unavailableDays}
+                    </ul>
+
                 </div>}
             </div>
         </>

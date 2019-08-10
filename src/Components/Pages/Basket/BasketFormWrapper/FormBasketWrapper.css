@@ -28,6 +28,10 @@
     margin: 20px;
 }
 
+.basket-form-wrapper .basketform-button-wrapper button {
+    text-transform: capitalize;
+}
+
 .workdays-wrapper {
     flex-basis: 100%;
     display: flex;
@@ -56,11 +60,11 @@
     height: 80%;
     padding: 0 10px;
     text-align: start;
-    transition: .5s;
+    transition: .7s;
 } 
 .workdays-wrapper .workdays-checkbox-wrapper:hover {
     background-color: #322;
-    transform: translateX(5px);
+    transform: translateX(10px);
 } 
 
 .workdays-time-wrapper input {

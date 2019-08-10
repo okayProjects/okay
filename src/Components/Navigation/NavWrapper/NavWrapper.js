@@ -9,7 +9,7 @@ import NavItem from '../NavItem/NavItem';
 class NavWrapper extends Component {
 
     render() {
-
+        const userEmail = this.props.loggedAs;
         let menuList = [
             { name: 'o mnie', path: '/about' },
             { name: 'kursy', path: '/offer' },
@@ -18,20 +18,24 @@ class NavWrapper extends Component {
         ];
 
         if (this.props.userIsAuthenticated) {
+
             menuList = [
                 { name: 'o mnie', path: '/about' },
                 { name: 'kursy', path: '/offer' },
-                { name: this.props.loggedAs, path: '/partnerZone' },
+                { name: userEmail, path: '/partnerZone', className: 'user-email' },
                 { name: 'wyloguj', path: '/logout' },
                 { name: 'koszyk', path: '/basket' }
             ];
-        }
+        };
+
+
 
         const menu = menuList.map(item => (
             <NavItem key={item.name}
                 path={item.path}
                 navItemName={item.name}
-                exact={item.exact} />
+                exact={item.exact}
+                className={item.className} />
         ));
 
         const itemsInBasket = <div className='items-in-basket'>

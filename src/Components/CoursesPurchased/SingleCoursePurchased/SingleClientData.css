@@ -1,3 +1,86 @@
 .client-data-wrapper {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
 }
+
+.client-personal-data-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    background-color: #322;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 10px 0;
+}
+
+.client-personal-data-wrapper span:first-of-type {
+    flex-basis: 100%;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.client-personal-data-wrapper h5 {
+    font-size: 22px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.client-personal-data-wrapper span:last-of-type {
+    flex-basis: 100%;
+    text-align: center;
+    text-transform: lowercase;
+}
+
+.clients-ordered-courses ul>li {
+    list-style: none;
+    font-size: 18px;
+    padding: 5px;
+    border-bottom: 1px solid #322;
+}
+
+/* .clients-ordered-courses ul>li:nth-last-of-type(even) {
+    background-color: rgb(172, 168, 168);
+} */
+.clients-order-comments {
+    border-bottom: 1px solid #322;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: justify;
+    width: 100%;
+}
+.clients-order-comments span,
+.unavailable-days-wrapper span {
+    font-size: 16px;
+    padding: 3px 5px;
+    background-color: #322;
+    color: #fff;
+}
+.clients-order-comments p {
+    padding: 5px;
+}
+
+.unavailable-days-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.unavailable-days-wrapper ul {
+    padding: 5px 0;
+    flex-basis: 100%;
+}
+
+.unavailable-days-wrapper ul>li {
+    padding: 0 5px;
+    list-style: none;
+}
+
+.unavailable-days-wrapper ul>li span {
+    font-weight: bold;
+    background-color: #fff;
+    color: black;
+}
+
+

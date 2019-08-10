@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import WrappingPage from './Components/WrappingPage/WrappingPage'
+import WrappingPage from './Components/WrappingPage/WrappingPage';
 
-function App() {
-  return (
-    <div className="App">
-      <WrappingPage />
-    </div>
-  );
-}
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <WrappingPage />
+      </div>
+    );
+  };
+};
+
 
 export default App;
