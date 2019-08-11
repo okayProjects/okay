@@ -83,4 +83,47 @@
     color: black;
 }
 
+@media (max-width: 1024px) {
+
+    
+.client-personal-data-wrapper {
+    padding: 5px 0;
+}
+
+.client-personal-data-wrapper span:first-of-type {
+    font-size: 13px;
+}
+
+.client-personal-data-wrapper h5 {
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.client-personal-data-wrapper span:last-of-type {
+    font-size: 11px;
+}
+
+.clients-order-comments span,
+.unavailable-days-wrapper span {
+    font-size: 14px;
+}
+
+.clients-ordered-courses ul>li {
+    font-size: 13px;
+    padding: 3px;
+}
+
+.clients-order-comments p {
+    padding: 5px;
+    font-size: 12px;
+}
+
+.unavailable-days-wrapper ul>li {
+    font-size: 12px;
+}
+
+.unavailable-days-wrapper ul>li span {
+    font-size: 12px;
+}
+}
 

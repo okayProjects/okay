@@ -1,9 +1,6 @@
 .courses-purchased-wrapper {
     padding-bottom: 50px;
-}
-
-.spinner-in-courses-purchased {
-    margin-top: 200px;
+    display: flex;
 }
 
 .purchased-course-wrapper {
@@ -18,4 +15,26 @@
     display: flex;
     width: 100vw;
     justify-content: center;
+}
+
+
+@media (max-width: 1024px) {
+    .courses-purchased-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin-top: 70px;
+    }
+
+    .purchased-course-wrapper {
+        margin: 0 0 20px 0;
+        width: 95vw;
+    }
+    
+    .empty-purchasedcourses-message-wrapper {
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+    }
 }

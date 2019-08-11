@@ -1,6 +1,6 @@
 .auth-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     height: 100vh;
@@ -12,7 +12,6 @@
 .form {
     flex-basis: 30%;
     height: 50%;
-    margin: 0 25px;
     padding: 30px 0;
     display: flex;
     flex-direction: column;
@@ -77,6 +76,12 @@
     color: #fff;
 }
 
+.password-reset {
+    color: #322;
+    /* font-size: 20px; */
+    flex-grow: 1;
+}
+
 .form button:hover a {
     color: #322222;
 }
@@ -95,4 +100,85 @@
     100% {
         opacity: 0;
     }
+}
+
+
+@media(max-width: 1024px) {
+    .auth-wrapper {
+        margin-top: 20px;
+        flex-direction: column;
+        height: calc(100vh - 20px);
+        justify-content: space-around;
+    }
+    .form {
+        flex-basis: 30%;
+        margin: 0 10px;
+        padding: 0; 
+    }
+    .form h3 {
+        font-size: 15px;
+        flex-basis: 20%;
+    }
+    
+    .form span {
+        font-size: 10px;
+    }
+        
+    .form input {
+        margin: 2px;
+        width: 90%;
+        height: 25px;
+        padding: 5px;
+    }
+    
+    .form button {
+        margin-top: 10px;
+        padding: 5px 8px;
+        font-size: 17px;
+    }
+        
+    .form button a {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+@media  (max-width: 1024px) and (orientation: landscape){
+.form {
+    flex-basis: 42%;
+    height: 50%;
+    margin: 0 10px;
+    padding: 0; 
+    /* background-color: red; */
+}
+.form h3 {
+    font-size: 15px;
+    flex-basis: 20%;
+}
+
+.form span {
+    font-size: 10px;
+}
+    
+.form input {
+    margin: 2px;
+    width: 90%;
+    height: 25px;
+    padding: 5px;
+}
+
+.form button {
+    margin-top: 10px;
+    padding: 5px 8px;
+    font-size: 17px;
+}
+    
+.form button a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+}
 }

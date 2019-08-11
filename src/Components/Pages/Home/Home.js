@@ -57,8 +57,6 @@ class Home extends Component {
             this.setState(prevState => {
                 return { pageLoaded: prevState.pageLoaded = true };
             });
-
-
         }, 4500);
     }
 
@@ -70,7 +68,7 @@ class Home extends Component {
                 <div className='span-wrapper'>
                     <span className="text"></span>
                     <span className='ok'></span>
-                    <div className='test'>
+                    <div className='good-day-wrapper'>
                         <span className='goodDay'></span>
                     </div>
                 </div>

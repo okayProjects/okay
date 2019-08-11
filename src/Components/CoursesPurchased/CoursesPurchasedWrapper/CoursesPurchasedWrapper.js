@@ -40,7 +40,7 @@ class CoursesPurchased extends Component {
                 </div>
             );
         } if (this.props.loading) {
-            coursesPurchased = <Spinner className='spinner-in-courses-purchased' />
+            coursesPurchased = <Spinner />
         }
 
         return (

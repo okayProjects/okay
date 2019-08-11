@@ -45,11 +45,15 @@ class NavWrapper extends Component {
 
         return (
             <nav className='nav'>
-                <ul>
+                <div className='nav-logo-wrapper'>
                     <Link to='/'><Logo /></Link>
-                    {menu}
+                </div>
+                <div className='nav-items-wrapper'>
+                    <ul>
+                        {menu}
+                    </ul>
                     {this.props.totalOrderedCourses.length > 0 && itemsInBasket}
-                </ul>
+                </div>
             </nav>
         );
     };

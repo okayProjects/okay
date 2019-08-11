@@ -1,4 +1,16 @@
-.nav ul>li a {
+.nav-items-wrapper ul {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 100%;
+    width: 100%;
+}
+.nav-items-wrapper ul>li{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-items-wrapper ul>li a {
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -28,9 +40,8 @@
     text-transform: lowercase;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    top: -10px;
-    /* font-size: 17px; */
+    text-align: center;
+    font-size: 15px;
 }
 .nav a.user-email::before {
     content: 'dzień dobry';
@@ -55,6 +66,11 @@ nav ul>li:hover a::after {
 
 
 @media(max-width: 1024px) {
+
+    /* .nav-items-wrapper ul {
+        flex-direction: column;
+    } */
+
     nav ul>li a::after {
         width: 0;
     }
@@ -65,4 +81,20 @@ nav ul>li:hover a::after {
     .nav a.active {
         font-size: 12px;
      }
+}
+
+@media  (max-width: 1024px) and (orientation: landscape){
+    .nav-items-wrapper ul>li a {
+        font-size: 12px;
+    }
+
+    .nav a.active {
+        font-size: 15px;
+    }
+    .nav a.user-email {
+        font-size: 12px;
+    }
+    .nav a.user-email::before {
+        font-size: 9px;
+    }
 }

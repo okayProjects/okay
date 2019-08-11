@@ -12,6 +12,6 @@ const NavItem = (props) => {
             </NavLink>
         </li>
     );
-}
+};
 
 export default NavItem;

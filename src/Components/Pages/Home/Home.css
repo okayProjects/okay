@@ -12,7 +12,7 @@
     left: 30%;
 }
 
-.test span {
+.good-day-wrapper span {
     margin-left: 64%;
 }
 
@@ -125,21 +125,21 @@
 @media (max-width: 1024px) {   
     .span-wrapper {
         width: 100%;
-        left: 50%;
-        -webkit-transform: translate(-45%, 0);
-                transform: translate(-45%, 0);
+        /* left: 50%; */
+        -webkit-transform: translate(-24%, 0);
+                transform: translate(-24%, 0);
     }
     
-    .test span {
-        margin-left: 45%;
+    .good-day-wrapper span {
+        margin-left: 37%;
     }
     
     .home .text, .home .ok {
-        font-size: 40px;
+        font-size: 30px;
     }
     
     .home .ok {
-        font-size: 40px;
+        font-size: 35px;
         line-height: 40px;
     }
     
@@ -149,5 +149,27 @@
     
     .home .goodDay {
         font-size: 20px;
+    }
+}
+
+@media  (max-width: 1024px) and (orientation: landscape){
+    .span-wrapper {
+        width: 100%;
+        /* left: 50%; */
+        -webkit-transform: translate(0, 0);
+                transform: translate(0, 0);
+    }
+    
+    .good-day-wrapper span {
+        margin-left: 32%;
+    }
+    
+    .home .text, .home .ok {
+        font-size: 40px;
+    }
+    
+    .home .ok {
+        font-size: 40px;
+        line-height: 40px;
     }
 }

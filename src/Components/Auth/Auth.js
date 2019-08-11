@@ -158,7 +158,7 @@ class Auth extends Component {
                             {signInInputs}
                             <Button btnType='offer-info-button'>Zaloguj</Button>
                         </form>
-                        <Link to='/passwordReset'>Nie pamiętasz hasła?</Link>
+                        <Link className='password-reset' to='/passwordReset'>Nie pamiętasz hasła?</Link>
                     </div>
                     <div className='form'>
                         <h3>Utwórz nowe konto</h3>

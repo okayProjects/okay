@@ -25,6 +25,7 @@
 .logo-empty-basket-message {
     position: absolute;
     left: 5%;
+    top: 0;
 }
 
 .basket-sent-message-wrapper {
@@ -136,4 +137,30 @@
 .accept input {
     width: 15px;
     height: 15px;
+}
+
+
+
+
+@media(max-width: 1024px) {
+    
+.basket-empty-message {
+    padding: 40px 0;
+    font-size: 15px;
+}
+
+.basket-empty-message h5 {
+    margin-top: 30px;
+}
+
+.logo-empty-basket-message {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.logo-empty-basket-message span {
+    margin: 0 auto;
+}
 }
