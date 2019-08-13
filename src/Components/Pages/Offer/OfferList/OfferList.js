@@ -34,9 +34,9 @@ const Offer = (props) => {
             <NavWrapper />
             <div className='offer-wrapper'>
                 <div className='offer-slogan-wrapper'>
+                    <h2>oferta na nowy rok szkolny</h2>
                     <h2>wygodnie i bez stresu</h2>
                     <h2>wybierz swój kurs</h2>
-                    <h2>oferta na nowy rok szkolny</h2>
                 </div>
                 {products}
             </div>

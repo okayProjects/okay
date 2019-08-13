@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import NavWrapper from '../../Navigation/NavWrapper/NavWrapper';
 import './PartnerZone.css';
 import Auth from '../../Auth/Auth';
 import CoursesPurchasedWrapper from '../../CoursesPurchased/CoursesPurchasedWrapper/CoursesPurchasedWrapper';
@@ -9,11 +8,9 @@ import CoursesPurchasedWrapper from '../../CoursesPurchased/CoursesPurchasedWrap
 class PartnerZone extends Component {
 
     render() {
+
         return (
-            <>
-                <NavWrapper />
-                {this.props.userIsAuthenticated ? <CoursesPurchasedWrapper /> : <Auth />}
-            </>
+            this.props.userIsAuthenticated ? <CoursesPurchasedWrapper /> : <Auth />
         );
     };
 };

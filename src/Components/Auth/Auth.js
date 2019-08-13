@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 // import NavWrapper from '../Navigation/NavWrapper/NavWrapper';
 import Form from '../UI/Form/Form';
 import Button from '../UI/Buttons/Button';
+import Navigation from '../Navigation/NavWrapper/NavWrapper';
 import Spinner from '../UI/Spinner/Spinner';
 import './Auth.css';
 import * as actions from '../../Store/Actions/actionsIndex';
@@ -149,7 +150,7 @@ class Auth extends Component {
 
         return (
             <>
-                {/* <NavWrapper /> */}
+                <Navigation className='navigation-in-auth' />
                 <div className='auth-wrapper'>
                     <div className='form'>
                         <h3>Zaloguj się</h3>

@@ -7,6 +7,7 @@ import PartnerZone from '../Pages/PartnerZone/PartnerZone';
 import OfferPage from '../Pages/Offer/OfferPage/OfferPage';
 import Basket from '../Pages/Basket/Basket';
 import Auth from '../Auth/Auth';
+import PasswordReset from '../PasswordReset/PasswordReset';
 import Logout from '../Auth/Logout/Logout';
 import * as actions from '../../Store/Actions/actionsIndex';
 
@@ -28,6 +29,7 @@ class WrappingPage extends Component {
                     <Route path='/basket' component={Basket} />
                     <Route path='/auth' component={Auth} />
                     <Route path='/logout' component={Logout} />
+                    <Route path='/passwordReset' component={PasswordReset} />
                     <Route path='/' component={Home} />
                 </Switch>
             </>

@@ -5,6 +5,7 @@ import SingleClientData from '../SingleCoursePurchased/SingleClientData';
 import * as actions from '../../../Store/Actions/actionsIndex';
 import Logo from '../../UI/Logo/Logo';
 import Spinner from '../../UI/Spinner/Spinner';
+import Navigation from '../../Navigation/NavWrapper/NavWrapper';
 
 class CoursesPurchased extends Component {
 
@@ -44,9 +45,12 @@ class CoursesPurchased extends Component {
         }
 
         return (
-            <div className='courses-purchased-wrapper'>
-                {coursesPurchased}
-            </div>
+            <>
+                <Navigation />
+                <div className='courses-purchased-wrapper'>
+                    {coursesPurchased}
+                </div>
+            </>
         );
     };
 };
