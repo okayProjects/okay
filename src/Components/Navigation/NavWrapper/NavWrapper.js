@@ -8,12 +8,26 @@ import NavItem from '../NavItem/NavItem';
 
 class NavWrapper extends Component {
 
+    state = {
+        burgerActive: false,
+        menuVisible: false
+    }
+
+    burgerStyleHandler = (e) => {
+        this.setState(prevState => {
+            return {
+                burgerActive: !prevState.burgerActive,
+                menuVisible: !prevState.menuVisible
+            };
+        });
+    };
+
     render() {
         const userEmail = this.props.loggedAs;
         let menuList = [
             { name: 'o mnie', path: '/about' },
             { name: 'kursy', path: '/offer' },
-            { name: 'strefa partnera/logowanie', path: '/partnerZone' },
+            { name: 'strefa partnera', path: '/partnerZone' },
             { name: 'koszyk', path: '/basket' }
         ];
 
@@ -43,18 +57,37 @@ class NavWrapper extends Component {
             <span>{this.props.totalOrderedCourses.length}</span>
         </div>
 
+        let burgerClasses = ['burger']
+        if (this.state.burgerActive) {
+            burgerClasses = ['burger', 'active']
+        }
+        let menuClasses = ['nav']
+        if (this.state.burgerActive) {
+            menuClasses = ['nav', 'visible']
+        }
+
         return (
-            <nav className='nav'>
-                <div className='nav-logo-wrapper'>
-                    <Link to='/'><Logo /></Link>
-                </div>
-                <div className='nav-items-wrapper'>
-                    <ul>
-                        {menu}
-                    </ul>
-                    {this.props.totalOrderedCourses.length > 0 && itemsInBasket}
-                </div>
-            </nav>
+            <>
+                <nav className={menuClasses.join(' ')}>
+                    <div className='logo-burger'>
+                        <Logo />
+                    </div>
+                    <div className={burgerClasses.join(' ')} onClick={() => this.burgerStyleHandler()}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div className='nav-logo-wrapper'>
+                        <Link to='/'><Logo /></Link>
+                    </div>
+                    <div className='nav-items-wrapper'>
+                        <ul>
+                            {menu}
+                        </ul>
+                        {this.props.totalOrderedCourses.length > 0 && itemsInBasket}
+                    </div>
+                </nav>
+            </>
         );
     };
 };

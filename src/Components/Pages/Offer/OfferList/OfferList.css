@@ -1,5 +1,3 @@
-
-
 .offer-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -15,16 +13,36 @@
     flex-wrap: wrap;
 }
 
-.offer-wrapper h1 {
+.offer-slogan-wrapper {
+    position: relative;
     flex-basis: 100%;
-    text-align: center;
-    margin-top: 5%; 
+    margin-top: 4%;
+    height: 80px;
     background-color: #322;
-    padding: 20px;
     color: #fff;
-    letter-spacing: 2px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.offer-slogan-wrapper h2 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 40px;
+    width: 100%;
     text-transform: capitalize;
     font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 5px;
+    animation: changeSloganText 24s linear infinite both;
+}
+
+.offer-slogan-wrapper h2:nth-child(2) {
+    animation-delay: 8s;
+}
+
+.offer-slogan-wrapper h2:nth-child(3) {
+    animation-delay: 16s;
 }
 
 .single-offer-wrapper {
@@ -122,6 +140,33 @@
 }
 
 
+@keyframes changeSloganText {
+    0% {
+        transform: translate(100%, -50%);
+    }
+
+    3% {
+        transform: translate(100%, -50%);
+    }
+
+    6% {
+        transform: translate(0, -50%);
+    }
+
+    30% {
+        transform: translate(0, -50%);
+    }
+
+    33% {
+        transform: translate(-100%, -50%);
+    }
+
+    100% {
+        transform: translate(-100%, -50%);
+    }
+}
+
+
 @media(max-width: 1024px){
     .offer-wrapper {
         margin-top: 60px;
@@ -130,14 +175,6 @@
             -ms-flex-direction: column;
                 flex-direction: column;
         height: 120vh;
-    }
-
-    .offer-wrapper h1 {
-        flex-basis: initial;
-        /* max-width: 100%; */
-        font-size: 15px;
-        margin-top: 1%; 
-        padding: 10px 20px;
     }
 }
 
@@ -148,39 +185,42 @@
         height: 80vh;
     }
 
-    .offer-wrapper h1 {
-        flex-basis: 100%;
-        /* max-width: 100%; */
-        font-size: 15px;
+    .offer-slogan-wrapper {
+        margin-top: -2%;
+        height: 40px;
+    }
+    
+    .offer-slogan-wrapper h2 {
+        font-size: 18px;
     }
 
     
-.single-offer-wrapper {
-    height: 220px;
-}
+    .single-offer-wrapper {
+        height: 220px;
+    }
 
-.offer-info h2 {
-    font-size: 22px;
-    text-shadow: 1px 1px #fff;
-}
+    .offer-info h2 {
+        font-size: 22px;
+        text-shadow: 1px 1px #fff;
+    }
 
-.offer-info p {
-    font-size: 15px;
-    font-weight: bold;
-    padding: 5px 10px;
-}
+    .offer-info p {
+        font-size: 15px;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
 
-.offer-info button a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 11px;
-}
+    .offer-info button a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 11px;
+    }
 
-.offer-info button {
-    padding: 5px 15px;
-    font-size: initial;
-    line-height: 11px;
-}
+    .offer-info button {
+        padding: 5px 15px;
+        font-size: initial;
+        line-height: 11px;
+    }
 
 }

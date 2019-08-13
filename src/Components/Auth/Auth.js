@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import NavWrapper from '../Navigation/NavWrapper/NavWrapper';
+// import NavWrapper from '../Navigation/NavWrapper/NavWrapper';
 import Form from '../UI/Form/Form';
 import Button from '../UI/Buttons/Button';
 import Spinner from '../UI/Spinner/Spinner';
@@ -149,7 +149,7 @@ class Auth extends Component {
 
         return (
             <>
-                <NavWrapper />
+                {/* <NavWrapper /> */}
                 <div className='auth-wrapper'>
                     <div className='form'>
                         <h3>Zaloguj się</h3>

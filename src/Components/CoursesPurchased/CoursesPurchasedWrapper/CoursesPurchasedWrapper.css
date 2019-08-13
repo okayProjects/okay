@@ -1,6 +1,7 @@
 .courses-purchased-wrapper {
     padding-bottom: 50px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .purchased-course-wrapper {
@@ -23,8 +24,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100vh;
         margin-top: 70px;
+        flex-wrap: wrap;
     }
 
     .purchased-course-wrapper {

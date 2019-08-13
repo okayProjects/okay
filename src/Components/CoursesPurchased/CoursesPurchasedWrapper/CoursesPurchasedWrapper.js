@@ -58,7 +58,8 @@ const mapStateToProps = state => {
         coursesPurchased: state.OrderSubmitReducer.orders,
         loading: state.OrderSubmitReducer.loading,
         token: state.AuthReducer.token,
-        userId: state.AuthReducer.userId
+        userId: state.AuthReducer.userId,
+        // email: state.AuthReducer.email
     };
 };
 

@@ -85,3 +85,59 @@
     letter-spacing: 2px;
     margin-left: 10px;
 }
+
+
+@media (max-width: 1024px) {
+    .orderinputs-wrapper {
+        justify-content: space-around;
+    }
+    
+    .orderinputs-wrapper  input,
+    .orderinputs-wrapper  textarea {
+          font-size: 12px;
+          margin: 5px 0;
+    }
+    
+    .orderinputs-wrapper > input {
+        flex-basis: 95%;
+    }
+    
+    .orderinputs-wrapper textarea {
+        flex-basis: 95%;
+        height: 60px;
+    }
+    
+    .basket-form-wrapper .basketform-button-wrapper {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 10px;
+    }
+    
+    .workdays-wrapper {
+        flex-direction: column;
+    }
+    
+    .workdays-wrapper h3 {
+        flex-basis: 100%;
+        padding: 0 10px;
+        font-size: 15px;
+    } 
+    
+    .workdays-wrapper .workdays-checkbox-wrapper label {
+      padding: 3px 0;
+      font-size: 12px;
+    }
+}
+
+
+@media (max-width: 1024px) and (orientation: landscape) {
+    .orderinputs-wrapper > input {
+        flex-basis: 30%;
+    }
+    
+    .orderinputs-wrapper textarea {
+        flex-basis: 97%;
+        height: 60px;
+    }
+}
