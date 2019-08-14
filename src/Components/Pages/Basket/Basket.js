@@ -14,7 +14,7 @@ class Basket extends Component {
 
     state = {
         formSubmittedMessage: false,
-        formSubmitted: false,
+        redirect: false,
         userAcceptance: false,
         user: {
             userPersonalData: {
@@ -149,16 +149,22 @@ class Basket extends Component {
         this.props.onClearOrderBasket();
     };
 
-    componentDidUpdate() {
-        setTimeout(() => {
-            if (this.state.formSubmittedMessage) {
-                this.setState({
-                    formSubmittedMessage: false,
-                    formSubmitted: true
-                });
-            };
-        }, 12000);
+    redirectHandler = () => {
+        this.setState(prevState => {
+            return { redirect: prevState.redirect = true };
+        });
     };
+
+    // componentDidUpdate() {
+    //     setTimeout(() => {
+    //         if (this.state.formSubmittedMessage) {
+    //             this.setState({
+    //                 formSubmittedMessage: false,
+    //                 formSubmitted: true
+    //             });
+    //         };
+    //     }, 12000);
+    // };
 
     render() {
 
@@ -201,6 +207,7 @@ class Basket extends Component {
                         <span>Już nad nim pracuję.</span>
                         <span>Spodziewaj się kontaku w mniej niż 24 godziny.</span>
                     </div>
+                    <Button btnType='offer-info-button' click={this.redirectHandler}>Okay</Button>
                 </div>
             );
         };
@@ -229,7 +236,7 @@ class Basket extends Component {
                             </div>
                         </form>
                     </div>}
-                {this.state.formSubmitted && <Redirect to='/offer' />}
+                {this.state.redirect && <Redirect to='/offer' />}
             </div>
         );
 
