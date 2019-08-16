@@ -8,6 +8,7 @@ import Navigation from '../../Navigation/NavWrapper/NavWrapper';
 import './Basket.css';
 import FormBasketWrapper from '../Basket/BasketFormWrapper/FormBasketWrapper';
 import Logo from '../../UI/Logo/Logo';
+import { checkValidity } from '../../UI/SharedFunctions/checkValidity';
 
 
 class Basket extends Component {
@@ -47,9 +48,12 @@ class Basket extends Component {
                 piątek: '',
                 sobota: '',
             }
+        }, validation: {
+            userName: false,
+            userSurname: false,
+            userTelephoneNumber: false
         }
-    }
-
+    };
 
 
     inputHandler = (e) => {
@@ -58,14 +62,24 @@ class Basket extends Component {
         const id = e.target.id;
 
         if (id === 'userPersonalData') {
+
             const updatedUser = {
                 ...this.state.user,
                 [id]: {
                     ...this.state.user[id],
-                    [name]: value
+                    [name]: value,
                 }
             };
-            this.setState({ user: updatedUser });
+
+            const validation = {
+                ...this.state.validation,
+                [name]: checkValidity(value, name)
+            };
+
+            this.setState({
+                user: updatedUser,
+                validation
+            });
         } if (name === 'unavailableDays') {
             const updatedUser = {
                 ...this.state.user,
@@ -102,51 +116,62 @@ class Basket extends Component {
             userId: this.props.userId
         };
 
-        this.props.onOrderSubmitForm(orderData, this.props.token);
+        if (this.state.validation.userName && this.state.validation.userSurname && this.state.validation.userTelephoneNumber) {
+            this.props.onOrderSubmitForm(orderData, this.props.token);
 
-        const user = {
-            ...this.state.user,
-            userPersonalData: {
-                ...this.state.user.userPersonalData,
-                userName: '',
-                userSurname: '',
-                userTelephoneNumber: '',
-                userComments: '',
-            },
-            unavailableDays: {
-                ...this.state.user.unavailableDays,
-                poniedziałek: false,
-                wtorek: false,
-                środa: false,
-                czwartek: false,
-                piątek: false,
-                sobota: false
-            },
-            unavailableHoursFrom: {
-                ...this.state.user.unavailableHoursFrom,
-                poniedziałek: '',
-                wtorek: '',
-                środa: '',
-                czwartek: '',
-                piątek: '',
-                sobota: ''
-            },
-            unavailableHoursTo: {
-                ...this.state.user.unavailableHoursTo,
-                poniedziałek: '',
-                wtorek: '',
-                środa: '',
-                czwartek: '',
-                piątek: '',
-                sobota: '',
+            const user = {
+                ...this.state.user,
+                userPersonalData: {
+                    ...this.state.user.userPersonalData,
+                    userName: '',
+                    userSurname: '',
+                    userTelephoneNumber: '',
+                    userComments: '',
+                },
+                unavailableDays: {
+                    ...this.state.user.unavailableDays,
+                    poniedziałek: false,
+                    wtorek: false,
+                    środa: false,
+                    czwartek: false,
+                    piątek: false,
+                    sobota: false
+                },
+                unavailableHoursFrom: {
+                    ...this.state.user.unavailableHoursFrom,
+                    poniedziałek: '',
+                    wtorek: '',
+                    środa: '',
+                    czwartek: '',
+                    piątek: '',
+                    sobota: ''
+                },
+                unavailableHoursTo: {
+                    ...this.state.user.unavailableHoursTo,
+                    poniedziałek: '',
+                    wtorek: '',
+                    środa: '',
+                    czwartek: '',
+                    piątek: '',
+                    sobota: '',
+                }
+            };
+
+            const validation = {
+                ...this.state.validation,
+                userName: false,
+                userSurname: false,
+                userTelephoneNumber: false
             }
-        };
-        this.setState({
-            formSubmittedMessage: true,
-            userAcceptance: false,
-            user
-        });
-        this.props.onClearOrderBasket();
+
+            this.setState({
+                formSubmittedMessage: true,
+                userAcceptance: false,
+                user,
+                validation
+            });
+            this.props.onClearOrderBasket();
+        } else return
     };
 
     redirectHandler = () => {
@@ -230,6 +255,7 @@ class Basket extends Component {
                                 change={this.inputHandler}
                                 checkedUnavailableDays={this.state.user.unavailableDays}
                                 checkedUserAcceptance={this.state.userAcceptance}
+                                invalidStyle={this.state.validation}
                             />
                             <div className='basketform-button-wrapper'>
                                 <Button btnType='offer-info-button'>Zamawiam wybrane kursy</Button>

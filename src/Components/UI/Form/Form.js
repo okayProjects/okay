@@ -2,6 +2,10 @@ import React from 'react';
 
 const input = (props) => {
 
+    // let inputClass = ['orderinputs-wrapper-input'];
+    // if (!props.invalidStyle && props.inputTouchedByUser > 0) {
+    //     inputClass = ['orderinputs-wrapper-input', 'invalid-input']
+    // }
     let inputElement = null;
 
     switch (props.elementType) {
@@ -10,6 +14,7 @@ const input = (props) => {
                 {...props.elementConfiguration}
                 value={props.value}
                 onChange={props.change}
+                className={!props.invalidStyle && props.inputTouchedByUser > 0 ? 'input-invalid' : null}
             />;
             break;
         case ('checkbox'):

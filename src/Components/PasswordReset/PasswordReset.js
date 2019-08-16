@@ -52,17 +52,7 @@ class PasswordReset extends Component {
         this.setState(prevState => {
             return { redirect: prevState.redirect = true };
         });
-    }
-
-    // componentDidUpdate() {
-    //     setTimeout(() => {
-    //         if (this.state.resetEmailSent) {
-    //             this.setState({
-    //                 redirect: true
-    //             });
-    //         };
-    //     }, 6000);
-    // }
+    };
 
     render() {
 

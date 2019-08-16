@@ -10,7 +10,8 @@ const orderForm = [
             placeholder: 'Twoje imię',
             name: 'userName',
             id: 'userPersonalData',
-            required: true
+            required: true,
+            title: 'To pole nie może zawierać cyfr i musi mieć co najmniej 3 litery.'
         }
     },
     {
@@ -20,7 +21,8 @@ const orderForm = [
             placeholder: 'Twoje nazwisko',
             name: 'userSurname',
             id: 'userPersonalData',
-            required: true
+            required: true,
+            title: 'To pole nie może zawierać cyfr i musi mieć co najmniej 3 litery.'
         }
     },
     {
@@ -30,7 +32,8 @@ const orderForm = [
             placeholder: 'Twój numer telefonu',
             name: 'userTelephoneNumber',
             id: 'userPersonalData',
-            required: true
+            required: true,
+            title: 'To pole musi mieć co najmniej 3 cyfry. Nie może zawierać liter, spacji, ani innych znaków specjalnych .'
         }
     },
 
@@ -70,8 +73,10 @@ class FormWrapper extends Component {
                 elementConfiguration={item.elementConfiguration}
                 labelId={item.elementConfiguration.id}
                 label={item.label}
-                value={this.props.value[item.elementConfiguration.name]}
+                value={this.props.value[item.elementConfiguration.id][item.elementConfiguration.name]}
                 change={this.props.change}
+                invalidStyle={this.props.invalidStyle[item.elementConfiguration.name]}
+                inputTouchedByUser={this.props.value[item.elementConfiguration.id][item.elementConfiguration.name].length}
             />
         ));
 

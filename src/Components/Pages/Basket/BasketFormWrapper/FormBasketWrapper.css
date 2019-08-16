@@ -17,6 +17,11 @@
     flex-basis: 30%;
 }
 
+.input-invalid {
+    border: 3px solid red !important;
+    background-color: rgb(241, 157, 147) !important;
+}
+
 .orderinputs-wrapper textarea {
     flex-basis: 100%;
 }
@@ -85,7 +90,6 @@
     letter-spacing: 2px;
     margin-left: 10px;
 }
-
 
 @media (max-width: 1024px) {
     .orderinputs-wrapper {

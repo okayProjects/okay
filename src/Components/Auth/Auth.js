@@ -8,6 +8,7 @@ import Navigation from '../Navigation/NavWrapper/NavWrapper';
 import Spinner from '../UI/Spinner/Spinner';
 import './Auth.css';
 import * as actions from '../../Store/Actions/actionsIndex';
+import { checkValidity } from '../UI/SharedFunctions/checkValidity';
 
 const signInForm = [
     {
@@ -16,8 +17,7 @@ const signInForm = [
             type: 'email',
             placeholder: 'Twój adres email',
             name: 'signInEmail',
-            // pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$",
-            // title: 'Twój email musi mieć format: nazwa@nazwa.domena'
+            title: 'Twój email musi mieć format: nazwa@nazwa.domena'
         }
     },
     {
@@ -26,8 +26,7 @@ const signInForm = [
             type: 'password',
             placeholder: 'Twoje hasło',
             name: 'signInPassword',
-            // pattern: "(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}",
-            // title: "Twoje hasło musi składać się z co najmniej 8 znaków, musi zawierać co najmniej jedną dużą i jedną małą literę oraz cyfrę"
+            title: "Twoje hasło musi składać się z co najmniej 8 znaków, musi zawierać co najmniej jedną dużą i jedną małą literę oraz cyfrę"
         }
     }
 ];
@@ -38,8 +37,7 @@ const signUpForm = [
             type: 'email',
             placeholder: 'Twój adres email',
             name: 'signUpEmail',
-            // pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$",
-            // title: 'Twój email musi mieć format: nazwa@nazwa.domena'
+            title: 'Twój email musi mieć format: nazwa@nazwa.domena'
         }
     },
     {
@@ -48,8 +46,7 @@ const signUpForm = [
             type: 'password',
             placeholder: 'Twoje hasło',
             name: 'signUpPassword',
-            // pattern: "(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}",
-            // title: "Twoje hasło musi składać się z co najmniej 8 znaków, musi zawierać co najmniej jedną dużą i jedną małą literę oraz cyfrę"
+            title: "Twoje hasło musi składać się z co najmniej 8 znaków, musi zawierać co najmniej jedną dużą i jedną małą literę oraz cyfrę"
         }
     }
 ];
@@ -64,14 +61,28 @@ class Auth extends Component {
         signInPassword: '',
         signUpFormSent: false,
         signInFormSent: false,
+        validation: {
+            signUpEmail: false,
+            signUpPassword: false,
+            signInEmail: false,
+            signInPassword: false,
+        }
     };
 
     inputHandler = (e) => {
         const value = e.target.value;
         const name = e.target.name;
 
+        const validation = {
+            ...this.state.validation,
+            [name]: checkValidity(value, name)
+        }
+
         this.setState(prevState => {
-            return { [name]: prevState[name] = value };
+            return {
+                [name]: prevState[name] = value,
+                validation
+            };
         });
     };
 
@@ -80,40 +91,48 @@ class Auth extends Component {
         const submitName = e.target.name;
 
         if (submitName === 'signUp') {
-            this.props.onAuth(this.state.signUpEmail, this.state.signUpPassword, submitName);
-            this.setState(prevState => {
-                return {
-                    signUpEmail: prevState.signUpEmail = '',
-                    signUpPassword: prevState.signUpPassword = '',
-                    signInFormSent: prevState.signInFormSent = false,
-                    signUpFormSent: prevState.signUpFormSent = true,
+            if (this.state.validation.signUpEmail && this.state.validation.signUpPassword) {
+                this.props.onAuth(this.state.signUpEmail, this.state.signUpPassword, submitName);
+                const validation = {
+                    ...this.state.validation,
+                    signUpEmail: false,
+                    signUpPassword: false,
+                    signInEmail: false,
+                    signInPassword: false,
                 };
-            });
+                this.setState(prevState => {
+                    return {
+                        signUpEmail: prevState.signUpEmail = '',
+                        signUpPassword: prevState.signUpPassword = '',
+                        signInFormSent: prevState.signInFormSent = false,
+                        signUpFormSent: prevState.signUpFormSent = true,
+                        validation
+                    };
+                });
+            } else return;
         } else if (submitName === 'signIn') {
-            this.props.onAuth(this.state.signInEmail, this.state.signInPassword, submitName);
-            this.setState(prevState => {
-                return {
-                    signInEmail: prevState.signInEmail = '',
-                    signInPassword: prevState.signInPassword = '',
-                    signUpFormSent: prevState.signUpFormSent = false,
-                    signInFormSent: prevState.signInFormSent = true,
+            if (this.state.validation.signInEmail && this.state.validation.signInPassword) {
+                this.props.onAuth(this.state.signInEmail, this.state.signInPassword, submitName);
+
+                const validation = {
+                    ...this.state.validation,
+                    signUpEmail: false,
+                    signUpPassword: false,
+                    signInEmail: false,
+                    signInPassword: false,
                 };
-            });
+                this.setState(prevState => {
+                    return {
+                        signInEmail: prevState.signInEmail = '',
+                        signInPassword: prevState.signInPassword = '',
+                        signUpFormSent: prevState.signUpFormSent = false,
+                        signInFormSent: prevState.signInFormSent = true,
+                        validation
+                    };
+                });
+            } else return;
         };
     };
-
-    // validation = () => {
-    //     let email = false;
-    //     let password = false;
-    //     let formCorrect = false;
-
-    //     if (this.state.password.length >= 6) {
-    //         password = true;
-    //     }
-
-
-    // }
-
 
     render() {
 
@@ -123,7 +142,9 @@ class Auth extends Component {
                 elementType={item.elementType}
                 elementConfiguration={item.elementConfiguration}
                 value={this.state[item.elementConfiguration.name]}
-                change={this.inputHandler} />
+                change={this.inputHandler}
+                invalidStyle={this.state.validation[item.elementConfiguration.name]}
+                inputTouchedByUser={this.state[item.elementConfiguration.name].length} />
         ));
         let signUpInputs = signUpForm.map(item => (
             <Form
@@ -131,7 +152,9 @@ class Auth extends Component {
                 elementType={item.elementType}
                 elementConfiguration={item.elementConfiguration}
                 value={this.state[item.elementConfiguration.name]}
-                change={this.inputHandler} />
+                change={this.inputHandler}
+                invalidStyle={this.state.validation[item.elementConfiguration.name]}
+                inputTouchedByUser={this.state[item.elementConfiguration.name].length} />
         ));
 
         if (this.props.loading && this.state.signInFormSent) {
