@@ -9,7 +9,7 @@ import abr3 from '../../../../images/Abroad/abr3.jpg';
 import b2b1 from '../../../../images/Business/b2b1.jpg';
 import b2b2 from '../../../../images/Business/b2b2.jpg';
 import b2b3 from '../../../../images/Business/b2b3.jpg';
-import video from '../../../../images/video/pencils.mov'
+import video from '../../../../images/video/pencils.mp4'
 
 
 
@@ -48,7 +48,7 @@ const SingleOffer = (props) => {
     let main = null;
 
     switch (props.id) {
-        case 'angielski ogólny':
+        case 'angielski dla każdego':
             header =
                 <div className='video-wrapper'>
                     <video className="header-video" src={video} autoPlay loop muted></video>

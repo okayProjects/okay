@@ -9,6 +9,7 @@ import './Basket.css';
 import FormBasketWrapper from '../Basket/BasketFormWrapper/FormBasketWrapper';
 import Logo from '../../UI/Logo/Logo';
 import { checkValidity } from '../../UI/SharedFunctions/checkValidity';
+import Footer from '../../UI/Footer/Footer';
 
 
 class Basket extends Component {
@@ -215,11 +216,13 @@ class Basket extends Component {
         });
 
         let basketMessage = (
-            <div className='basket-empty-message'>
-                <div className='logo-empty-basket-message' ><Logo /></div>
-                <h3>Twój koszyk jest pusty</h3>
-                <h5>Wybierz swój kurs</h5>
-            </div>
+            <>
+                <div className='basket-empty-message'>
+                    <div className='logo-empty-basket-message' ><Logo /></div>
+                    <h3>Twój koszyk jest pusty</h3>
+                    <h5>Wybierz swój kurs</h5>
+                </div>
+            </>
         );
         if (this.state.formSubmittedMessage) {
             basketMessage = (
@@ -271,7 +274,10 @@ class Basket extends Component {
         };
 
         return (
-            basket
+            <>
+                {basket}
+                <Footer />
+            </>
         );
     };
 };

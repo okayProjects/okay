@@ -1,5 +1,5 @@
 main section {
-    width: 70vw;
+    width: 80vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -7,6 +7,10 @@ main section {
     -webkit-transition: 1s;
     transition: 1s;
 } 
+
+main section:nth-child(even){
+    align-self: flex-end;
+}
 
 .section-description-wrapper {
     -ms-flex-preferred-size: 75%;
@@ -59,10 +63,10 @@ main .single-section:nth-of-type(5) {
             box-shadow: 1px 1px 1px 1px blue;
 }
 
-section:hover {
+/* section:hover {
 -webkit-transform: translateX(calc(15% + 25px));
         transform: translateX(calc(15% + 25px));
-}
+} */
 
 .section-description-wrapper article {
     padding: 10px;

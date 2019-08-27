@@ -3,6 +3,7 @@ import SingleCourseItem from '../SingleCourseItems/SingleCourseItem';
 import { connect } from 'react-redux';
 import * as actionTypes from '../../../Store/Actions/actions';
 import Spinner from '../../UI/Spinner/Spinner';
+import Footer from '../../UI/Footer/Footer';
 import pic1 from '../../../images/abroadcourses/ge1.jpg';
 import pic2 from '../../../images/abroadcourses/uk1.jpg';
 import pic3 from '../../../images/abroadcourses/abroad.jpg';
@@ -56,6 +57,7 @@ class AbroadCourses extends Component {
         return (
             <>
                 {section}
+                <Footer />
             </>
         );
     };

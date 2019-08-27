@@ -9,6 +9,7 @@ import Basket from '../Pages/Basket/Basket';
 import Auth from '../Auth/Auth';
 import PasswordReset from '../PasswordReset/PasswordReset';
 import Logout from '../Auth/Logout/Logout';
+import About from '../Pages/About/About';
 import * as actions from '../../Store/Actions/actionsIndex';
 
 
@@ -30,6 +31,7 @@ class WrappingPage extends Component {
                     <Route path='/auth' component={Auth} />
                     <Route path='/logout' component={Logout} />
                     <Route path='/passwordReset' component={PasswordReset} />
+                    <Route path='/about' component={About} />
                     <Route path='/' component={Home} />
                 </Switch>
             </>

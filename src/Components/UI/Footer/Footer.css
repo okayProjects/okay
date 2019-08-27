@@ -1,0 +1,53 @@
+footer {
+    /* margin-top: 100px; */
+    /* height: 100px; */
+    width: 100%;
+    background-color: #322;
+    border-top: 3px solid #2AC503;
+}
+
+/* footer p {
+    font-size: 18px;
+    line-height: 70px;
+    color: aliceblue;
+} */
+
+footer .modal-picture-wrapper {
+    display: flex;
+}
+
+footer .modal-contact-details .footer-button-wrapper {
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 3px;
+    border-bottom: 2px solid aliceblue;
+    font-family: 'Roboto Mono', monospace;
+    padding: 1%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+    justify-content: space-between;
+    flex-basis: 100%;
+}
+
+footer .modal-contact-details .footer-button-wrapper h2 {
+    border: none;
+    font-size: 18px;
+    padding: 0;
+}
+
+footer .modal-contact-details .footer-button-wrapper button {
+    font-size: 14px;
+    padding: 7px 15px;
+}
+
+footer .modal-span-wrapper span {
+    color: aliceblue;
+    font-size: 17px;
+}
+
+footer .modal-span-wrapper span i {
+    font-size: 16px;
+}

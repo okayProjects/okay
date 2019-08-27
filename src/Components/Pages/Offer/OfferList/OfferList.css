@@ -7,16 +7,16 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: calc(100vh - 60px);
+    /* height: calc(100vh - 60px); */
     width: 90vw;
-    margin: 0 auto;
+    margin: 80px auto 100px auto;
     flex-wrap: wrap;
 }
 
 .offer-slogan-wrapper {
     position: relative;
     flex-basis: 100%;
-    margin-top: 4%;
+    margin-bottom: 4%;
     height: 80px;
     background-color: #322;
     color: #fff;
@@ -174,7 +174,11 @@
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        height: 120vh;
+        height: 140vh;
+    }
+    .single-offer-wrapper:hover {
+        box-shadow: initial;
+        transform: initial;
     }
 }
 
@@ -183,6 +187,7 @@
     .offer-wrapper {
         flex-direction: row;
         height: 80vh;
+        width: 98vw;
     }
 
     .offer-slogan-wrapper {
@@ -197,15 +202,17 @@
     
     .single-offer-wrapper {
         height: 220px;
+        flex-basis: 32%;
     }
 
     .offer-info h2 {
-        font-size: 22px;
+        font-size: 20px;
         text-shadow: 1px 1px #fff;
+        padding: 0 10px;
     }
 
     .offer-info p {
-        font-size: 15px;
+        font-size: 14px;
         font-weight: bold;
         padding: 5px 10px;
     }
@@ -218,7 +225,7 @@
     }
 
     .offer-info button {
-        padding: 5px 15px;
+        padding: 5px;
         font-size: initial;
         line-height: 11px;
     }

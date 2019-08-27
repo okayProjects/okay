@@ -49,28 +49,38 @@
     padding: 5px;
 }
 
-.workdays-wrapper div {
+.day-time-wrapper:not(.accept) {
     flex-basis: 45%;
     color: #fff;
-    margin: 5px;
+    margin: 5px auto;
+    justify-content: space-around;
     display: flex;
     align-items: center;
 }
 
-
 .workdays-wrapper .workdays-checkbox-wrapper {
+    flex-basis: 35%;
     background-color: rgb(85, 66, 66);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: 80%;
     padding: 0 10px;
     text-align: start;
+    display: flex;
+    align-items: center;
     transition: .7s;
 } 
+.workdays-time-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
 .workdays-wrapper .workdays-checkbox-wrapper:hover {
     background-color: #322;
     transform: translateX(10px);
 } 
+
 
 .workdays-time-wrapper input {
     flex-grow: 1;
@@ -118,19 +128,34 @@
         margin: 10px;
     }
     
-    .workdays-wrapper {
+    .day-time-wrapper:not(.accept) {
+        flex-basis: 95%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .workdays-wrapper h3 {
+        font-size: 14px;
+    }
+    .workdays-wrapper .workdays-checkbox-wrapper {
+        flex-basis: 42%;
+    }
+
+    .workdays-time-wrapper {
+        display: flex;
         flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+    .workdays-wrapper .workdays-time-wrapper span {
+        font-size: 11px;
     }
     
-    .workdays-wrapper h3 {
-        flex-basis: 100%;
-        padding: 0 10px;
-        font-size: 15px;
-    } 
-    
     .workdays-wrapper .workdays-checkbox-wrapper label {
-      padding: 3px 0;
-      font-size: 12px;
+        font-size: 12px;
+        padding: 2px 0;
     }
 }
 
@@ -143,5 +168,11 @@
     .orderinputs-wrapper textarea {
         flex-basis: 97%;
         height: 60px;
+    }
+    .day-time-wrapper:not(.accept) {
+        flex-basis: 90%;
+    }
+    .workdays-time-wrapper {
+        flex-direction: row;
     }
 }

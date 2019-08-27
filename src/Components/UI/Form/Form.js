@@ -7,8 +7,9 @@ const input = (props) => {
     //     inputClass = ['orderinputs-wrapper-input', 'invalid-input']
     // }
     let inputElement = null;
-
+    // console.log(props.invalidStyle, input.inputTouchedByUser);
     switch (props.elementType) {
+
         case ('input'):
             inputElement = <input
                 {...props.elementConfiguration}
@@ -32,10 +33,11 @@ const input = (props) => {
             inputElement = <textarea
                 {...props.elementConfiguration}
                 value={props.value}
-                onChange={props.change} />;
+                onChange={props.change}
+                className={!props.invalidStyle && props.inputTouchedByUser > 0 ? 'textarea-invalid' : null} />;
             break;
         case ('workdays'):
-            inputElement = <div>
+            inputElement = <div className='day-time-wrapper'>
                 <div className='workdays-checkbox-wrapper'>
                     <input
                         {...props.elementConfiguration}

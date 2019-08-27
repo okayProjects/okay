@@ -6,9 +6,10 @@ import geImg from '../../../../images/offer/ge.jpg';
 import businessImg from '../../../../images/offer/business.jpg';
 import abroadImg from '../../../../images/offer/abroad.jpg';
 import Button from '../../../UI/Buttons/Button';
+import Footer from '../../../UI/Footer/Footer';
 
 
-const offerList = [{ type: 'angielski ogólny', src: geImg, slogan: 'kursy indywidualne i grupowe, matura i egzamin po ósmej klasie' }, { type: 'angielski dla firm', src: businessImg, slogan: 'kursy indywidualne, grupowe i te "szyte na miarę" ' }, { type: 'angielski za granicą', src: abroadImg, slogan: "wakacje w Anglii - nauka poprzez relax międzynarodowej grupie" }];
+const offerList = [{ type: 'angielski dla każdego', src: geImg, slogan: 'kursy indywidualne i grupowe, matura i egzamin po ósmej klasie' }, { type: 'angielski dla firm', src: businessImg, slogan: 'kursy indywidualne, grupowe i te "szyte na miarę" ' }, { type: 'angielski za granicą', src: abroadImg, slogan: "wakacje w Anglii - nauka poprzez relax międzynarodowej grupie" }];
 
 
 
@@ -40,6 +41,7 @@ const Offer = (props) => {
                 </div>
                 {products}
             </div>
+            <Footer />
         </div>
     );
 };

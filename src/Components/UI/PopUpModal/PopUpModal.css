@@ -1,0 +1,159 @@
+.modal-wrapper {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-200%);
+            transform: translate(-50%,-200%);
+    padding: 30px;
+    -webkit-transition: 1s;
+    transition: 1s;
+    width: 75vw;
+    height: 80vh; 
+}
+
+.modal-wrapper.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+    background-color: #999;
+    width: 75vw;
+    height: 73vh; 
+    -webkit-transform: translate(-50%,-50%); 
+            transform: translate(-50%,-50%);
+    z-index: 100;
+}
+
+.modal-wrapper .modal-picture-wrapper {
+    background-image: url('../../../images/modal/cityByNight.jpg');
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+}
+
+.modal-wrapper .modal-picture-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: aliceblue;
+}
+
+.modal-picture-wrapper .modal-picture-slogan {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;    
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+/* .modal-picture-wrapper .modal-picture-slogan h3:first-child {
+    font-size: 25px;
+    letter-spacing: 7px;
+    padding: 0 0 2% 5%;
+} */
+/* .modal-picture-wrapper .modal-picture-slogan h3:last-child {
+    font-size: 30px;
+    text-transform: capitalize;
+    padding-left: 5%;
+} */
+
+.modal-picture-wrapper .modal-contact-details {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2%;
+}
+
+.modal-contact-details h2 {
+    border-bottom: 2px solid aliceblue;
+    font-family: 'Roboto Mono', monospace;
+    padding: 1%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.modal-contact-details .modal-span-wrapper {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 2%;
+    font-size: 15px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.modal-span-wrapper span {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    padding: 1% 0;
+}
+
+.modal-span-wrapper span i {
+    padding: 0 3%;
+    color: rgb(42, 197, 3);
+}
+
+.modal-wrapper .modal-form-wrapper {
+    margin-top: 20px;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.modal-wrapper .modal-form-wrapper form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.modal-form-wrapper form input {
+    -ms-flex-preferred-size: 30%;
+    flex-basis: 30%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid black; 
+    border-radius: 5px;
+}
+
+.modal-form-wrapper form textarea {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid black; 
+    border-radius: 5px;
+}
+
+.modal-form-wrapper form div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.textarea-invalid.textarea-invalid {
+    border: 2px solid red;
+}

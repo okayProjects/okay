@@ -6,6 +6,7 @@ import * as actions from '../../../Store/Actions/actionsIndex';
 import Logo from '../../UI/Logo/Logo';
 import Spinner from '../../UI/Spinner/Spinner';
 import Navigation from '../../Navigation/NavWrapper/NavWrapper';
+import Footer from '../../UI/Footer/Footer';
 
 class CoursesPurchased extends Component {
 
@@ -50,6 +51,7 @@ class CoursesPurchased extends Component {
                 <div className='courses-purchased-wrapper'>
                     {coursesPurchased}
                 </div>
+                <Footer />
             </>
         );
     };

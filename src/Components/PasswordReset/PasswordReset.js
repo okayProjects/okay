@@ -6,6 +6,7 @@ import Navigation from '../Navigation/NavWrapper/NavWrapper';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import './PasswordReset.css';
+import Footer from '../UI/Footer/Footer';
 
 class PasswordReset extends Component {
 
@@ -111,6 +112,9 @@ class PasswordReset extends Component {
                             </form>
                         </div>}
                     {this.state.redirect && <Redirect to='/auth' />}
+                </div>
+                <div className='tt'>
+                    <Footer />
                 </div>
             </>
         );

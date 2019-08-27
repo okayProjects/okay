@@ -4,7 +4,7 @@
     align-items: center;
     flex-wrap: wrap;
     height: 100vh;
-    background-image: url('../../images/auth/plush-design-studio-l3N9Q27zULw-unsplash.jpg');
+    background-image: url('../../images/auth/pencils.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -29,7 +29,6 @@
 }
 
 .form h3 {
-    /* padding: 3px 15px; */
     color: #322;
     font-size: 20px;
     flex-basis: 20%;
@@ -113,9 +112,20 @@
         margin: 0 10px;
         padding: 0; 
     }
+    .form:hover {
+        background-color: initial;
+        -webkit-box-shadow: initial;
+        box-shadow: initial;  
+        transform: initial; 
+        border-radius: initial;
+    }
     .form h3 {
         font-size: 15px;
         flex-basis: 20%;
+    }
+    .form:hover h3 {
+        color: initial;    
+        font-weight: initial;
     }
     
     .form span {

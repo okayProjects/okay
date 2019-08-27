@@ -9,6 +9,8 @@ const SingleCourseItem = (props) => {
                 <div className='section-description-wrapper'>
                     <h2>{props.sectionName}</h2>
                     <article>{props.courseDescription}</article>
+                    <p>{props.courseTarget}</p>
+                    <span>{props.courseTerms}</span>
                     <span>{`Cena całego kursu: ${props.price} PLN`}</span>
                     <Button click={() => props.addToBasket(props.course)} btnType='Shake'>dodaj do koszyka</Button>
                 </div>

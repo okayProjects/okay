@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actionTypes from '../../../Store/Actions/actions';
 import './Business.css';
 import axios from 'axios';
+import Footer from '../../UI/Footer/Footer';
 import Spinner from '../../UI/Spinner/Spinner';
 import pic1 from '../../../images/businesscources/hands.jpg';
 import pic2 from '../../../images/businesscources/manwitflag.jpg';
@@ -39,7 +40,9 @@ class BusinessCourses extends Component {
         let section = <Spinner />
         if (this.state.b2bCourses) {
             section = this.state.b2bCourses.map((course, index) =>
-                <SingleCourseItem key={course.id + index} sectionName={course.id}
+                <SingleCourseItem key={course.id + index}
+                    sectionName={course.name}
+                    // courseTarget={course.target}
                     id={course.id}
                     courseDescription={course.descp}
                     price={course.price}
@@ -53,6 +56,7 @@ class BusinessCourses extends Component {
         return (
             <>
                 {section}
+                <Footer />
             </>
         );
     };

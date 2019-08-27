@@ -1,5 +1,5 @@
 main section {
-    width: 70vw;
+    width: 80vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -59,10 +59,10 @@ main .single-section:nth-of-type(5) {
             box-shadow: 1px 1px 1px 1px blue;
 }
 
-section:hover {
+/* section:hover {
 -webkit-transform: translateX(calc(15% + 25px));
         transform: translateX(calc(15% + 25px));
-}
+} */
 
 .section-description-wrapper article {
     padding: 10px;
@@ -72,9 +72,9 @@ section:hover {
 
 .section-description-wrapper:hover article {
     background-color: #ddd;
-    border-radius: 5px;
-   
+    border-radius: 5px;  
 }
+
 main .single-section h2 {
     text-align: center;
     padding: 30px;
