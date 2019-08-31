@@ -16,29 +16,29 @@ import video from '../../../../images/video/pencils.mp4'
 const abroad = [
     {
         src: abr1,
-        heading: 'abroad1'
+        // heading: 'abroad1'
     },
     {
         src: abr2,
-        heading: 'abroad2'
+        // heading: 'abroad2'
     },
     {
         src: abr3,
-        heading: 'abroad3'
+        // heading: 'abroad3'
     },
 ]
 const business = [
     {
         src: b2b1,
-        heading: 'b2b1'
+        // heading: 'b2b1'
     },
     {
         src: b2b2,
-        heading: 'b2b2'
+        // heading: 'b2b2'
     },
     {
         src: b2b3,
-        heading: 'b2b3'
+        // heading: 'b2b3'
     },
 ]
 
@@ -62,12 +62,12 @@ const SingleOffer = (props) => {
                     <img src={item.src} alt={`img + ${index}`} />
                 </React.Fragment>
             );
-            const h1Business = business.map(item =>
-                <React.Fragment key={item.heading}>
-                    <h1>{item.heading}</h1>
-                </React.Fragment>);
+            // const h1Business = business.map(item =>
+            //     <React.Fragment key={item.heading}>
+            //         <h1>{item.heading}</h1>
+            //     </React.Fragment>);
 
-            header = <div className='carousel-wrapper'>{slidesBusiness}{h1Business}</div>;
+            header = <div className='carousel-wrapper'>{slidesBusiness}</div>;
             main = <BusinessCourses />
             break;
 
@@ -77,11 +77,11 @@ const SingleOffer = (props) => {
                     <img src={item.src} alt={`img + ${index}`} />
                 </React.Fragment>
             );
-            const h1Abroad = abroad.map(item =>
-                <React.Fragment key={item.heading}>
-                    <h1>{item.heading}</h1>
-                </React.Fragment>);
-            header = <div className='carousel-wrapper'>{slidesAbroad}{h1Abroad}</div>;
+            // const h1Abroad = abroad.map(item =>
+            //     <React.Fragment key={item.heading}>
+            //         <h1>{item.heading}</h1>
+            //     </React.Fragment>);
+            header = <div className='carousel-wrapper'>{slidesAbroad}</div>;
             main = <AbroadCourses />
             break
         default: header = null;

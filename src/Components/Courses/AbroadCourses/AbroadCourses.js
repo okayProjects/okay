@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import * as actionTypes from '../../../Store/Actions/actions';
 import Spinner from '../../UI/Spinner/Spinner';
 import Footer from '../../UI/Footer/Footer';
-import pic1 from '../../../images/abroadcourses/ge1.jpg';
-import pic2 from '../../../images/abroadcourses/uk1.jpg';
+import pic1 from '../../../images/abroadcourses/uk1.jpg';
+import pic2 from '../../../images/abroadcourses/ge1.jpg';
 import pic3 from '../../../images/abroadcourses/abroad.jpg';
 import pic4 from '../../../images/abroadcourses/tube.jpg';
 import axios from 'axios';
@@ -43,10 +43,13 @@ class AbroadCourses extends Component {
             section = this.state.abroadCourses.map((course, index) =>
                 <SingleCourseItem
                     key={course.id}
-                    sectionName={course.id}
+                    sectionName={course.name}
                     id={course.id}
                     courseDescription={course.descp}
                     price={course.price}
+                    courseAdvantages={course.advantages}
+                    courseTarget={course.target}
+                    courseTerms={course.terms}
                     src={course.src}
                     course={course}
                     alt={'pic' + index}

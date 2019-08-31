@@ -23,13 +23,26 @@ class About extends Component {
 
     componentDidMount() {
         this.sectionsApearingOnScroll();
+        this.headerAnimation();
+    };
+
+    headerAnimation() {
+        const myDocument = $(document);
+        const header = $('header');
+
+        myDocument.on('scroll', function () {
+            const scrollCurrentPosition = myDocument.scrollTop();
+            const headerHeight = header.outerHeight();
+            header.css({
+                // 'opacity': 1 - scrollCurrentPosition / headerHeight,
+                'filter': 'grayscale(' + 2 * scrollCurrentPosition / headerHeight + ')'
+            });
+        });
     };
 
     sectionsApearingOnScroll() {
         $(document).on('scroll', function () {
-
             //rightBottomArrowActivator
-
             const windowHeight = $(window).height();
             const currentScrollValue = $(this).scrollTop();
             const arrow = $('.arrow');
@@ -45,7 +58,7 @@ class About extends Component {
 
             // offer
 
-            if (currentScrollValue > s1Height + s1FromTop - windowHeight) {
+            if (currentScrollValue > s1Height + s1FromTop - windowHeight / .8) {
                 $('.offer-one, .offer-two, .offer-three, .offer-four')
                     .addClass('activated');
             };
@@ -88,7 +101,7 @@ class About extends Component {
                 <img src={img2} alt='hero2' />
                 <img src={img3} alt='hero3' />
                 <div>
-                    <h1>Dla dzieci, młodzieży i dosrosłych.</h1>
+                    <h1>Dla dzieci, młodzieży i dorosłych.</h1>
                     <h2>Wygodnie z dojazdem do domu.</h2>
                 </div>
                 <div>
