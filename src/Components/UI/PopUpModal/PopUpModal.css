@@ -2,8 +2,8 @@
     position: fixed;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%,-200%);
-            transform: translate(-50%,-200%);
+    -webkit-transform: translate(-50%,-250%);
+            transform: translate(-50%,-250%);
     padding: 30px;
     -webkit-transition: 1s;
     transition: 1s;

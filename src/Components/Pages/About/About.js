@@ -3,10 +3,10 @@ import Navigation from '../../Navigation/NavWrapper/NavWrapper';
 import photoOne from '../../../images/s2/photo-one.jpg';
 import photoTwo from '../../../images/s2/photo-two.jpg';
 import Button from '../../UI/Buttons/Button';
-import logoWielton from '../../../images/logos/logowielton.png';
-import logoPfleiderer from '../../../images/logos/logopfleiderer.png';
-import logoTopline from '../../../images/logos/logotopline.png';
-import logoMeblosiek from '../../../images/logos/logomeblosiek.png';
+import logoWielton from '../../../images/logos/logowielton.jpg';
+import logoPfleiderer from '../../../images/logos/logopfleiderer.jpg';
+import logoTopline from '../../../images/logos/logotopline.jpg';
+import logoMeblosiek from '../../../images/logos/logomeblosiek.jpg';
 import logoHelvetia from '../../../images/logos/logohelvetia.jpg';
 import img1 from '../../../images/hero/ge.jpg';
 import img2 from '../../../images/hero/business.jpg';
@@ -165,14 +165,14 @@ class About extends Component {
                 <div className="photo-one-wrapper">
                     <img src={photoOne} alt="hands" />
                     <div>
-                        <h3>powerd by passion</h3>
+                        <h3>napędzany pasją i</h3>
                         <Button btnType='linesInside' click={this.modalActivatorHandler}>Więcej</Button>
                     </div>
                 </div>
                 <div className="photo-two-wrapper">
                     <img src={photoTwo} alt="businessPeopleWorking" />
                     <div>
-                        <h3>done with professionalism</h3>
+                        <h3>profesjonalizmem</h3>
                         <Button btnType='linesInside' click={this.modalActivatorHandler}>Więcej</Button>
                     </div>
                 </div>
@@ -201,7 +201,7 @@ class About extends Component {
                 <div className="s3-left-wrapper">
                     <div></div>
                     <div>
-                        <h3>More than just a project
+                        <h3>Więcej niż lekcja
                     </h3>
                         <h4>With love, With care</h4>
                         <p>With a talented team of skilled professionals, we are adept in a multitude of technologies,
@@ -246,7 +246,7 @@ class About extends Component {
                     {sectionFive}
                     {sectionThree}
                 </main>
-                <Footer />
+                {/* <Footer /> */}
                 <PopUpModal modalActive={this.state.modalActive} />
             </div>
         );

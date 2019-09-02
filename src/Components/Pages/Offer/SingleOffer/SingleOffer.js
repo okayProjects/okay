@@ -9,8 +9,7 @@ import abr3 from '../../../../images/Abroad/abr3.jpg';
 import b2b1 from '../../../../images/Business/b2b1.jpg';
 import b2b2 from '../../../../images/Business/b2b2.jpg';
 import b2b3 from '../../../../images/Business/b2b3.jpg';
-import video from '../../../../images/video/pencils.mp4'
-
+import video from '../../../../images/video/pencils.mp4';
 
 
 const abroad = [
@@ -58,7 +57,7 @@ const SingleOffer = (props) => {
 
         case 'angielski dla firm':
             const slidesBusiness = business.map((item, index) =>
-                <React.Fragment key={item.heading}>
+                <React.Fragment key={item.src}>
                     <img src={item.src} alt={`img + ${index}`} />
                 </React.Fragment>
             );
