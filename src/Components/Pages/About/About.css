@@ -836,64 +836,64 @@
     }
 
     
-.s3 {
-    width: 100%;
-    margin: 0 auto 20px auto;
-}
+    .s3 {
+        width: 100%;
+        margin: 0 auto 20px auto;
+    }
 
-.s3 div {
-    -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
-}
+    .s3 div {
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
+    }
 
-.s3-left-wrapper {
-    padding: 5px 20px 5px 0;
-}
+    .s3-left-wrapper {
+        padding: 5px 20px 5px 0;
+    }
 
-.s3-left-wrapper div button {
-   font-size: 15px;
-}
-
-.s3-left-wrapper div:nth-child(2) {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-}
-
-.s3-left-wrapper div:nth-child(2) h3 {
-    font-size: 18px;
-    padding: 10px 0 5px 0; 
-}
-
-.s3-left-wrapper div:nth-child(2) h4 {
-    padding: 10px 0 20px;
+    .s3-left-wrapper div button {
     font-size: 15px;
-}
+    }
 
-.s3-left-wrapper div:nth-child(2) p {
-    font-size: 14px;
-    line-height: 21px;
-}
+    .s3-left-wrapper div:nth-child(2) {
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    }
 
-.s3-right-wrapper .clients h2 {
-    font-size: 20px;
-}
+    .s3-left-wrapper div:nth-child(2) h3 {
+        font-size: 18px;
+        padding: 10px 0 5px 0; 
+    }
 
-.s3-right-wrapper .logo-wrapper {
-    padding: 0 10px;
-}
+    .s3-left-wrapper div:nth-child(2) h4 {
+        padding: 10px 0 20px;
+        font-size: 15px;
+    }
 
-.s3-right-wrapper .logo-wrapper img {
-    -ms-flex-preferred-size: 40%;
-        flex-basis: 40%;
-    display: block; 
-    padding: 0 20px;
-    margin-top: 15px;
-    max-height: 40px;
-    -webkit-transform: scale(1) rotate(0);
-            transform: scale(1) rotate(0);
-    -webkit-transition: 1s ease-out;
-    transition: 1s ease-out;
-    
-}
+    .s3-left-wrapper div:nth-child(2) p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .s3-right-wrapper .clients h2 {
+        font-size: 20px;
+    }
+
+    .s3-right-wrapper .logo-wrapper {
+        padding: 0 10px;
+    }
+
+    .s3-right-wrapper .logo-wrapper img {
+        -ms-flex-preferred-size: 40%;
+            flex-basis: 40%;
+        display: block; 
+        padding: 0 20px;
+        margin-top: 15px;
+        max-height: 40px;
+        -webkit-transform: scale(1) rotate(0);
+                transform: scale(1) rotate(0);
+        -webkit-transition: 1s ease-out;
+        transition: 1s ease-out;
+        
+    }
 
 }

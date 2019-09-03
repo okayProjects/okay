@@ -19,12 +19,12 @@ class Footer extends Component {
     render() {
         return (
             <footer>
-                <div className="modal-picture-wrapper">
-                    <div className="modal-picture-slogan">
+                <div className="footer-picture-wrapper">
+                    <div className="footer-logo">
                         <Logo />
                     </div>
-                    <div className="modal-contact-details">
-                        <div className="modal-span-wrapper">
+                    <div className="footer-contact-details">
+                        <div className="footer-span-wrapper">
                             <span><i className="fas fa-phone"></i>+48 500 097 398</span>
                             <span><i className="fas fa-hourglass-end"></i>Pn-So: 09:00 - 20:00</span>
                             <span><i className="fas fa-envelope"></i>k.lugowski@yahoo.com</span>

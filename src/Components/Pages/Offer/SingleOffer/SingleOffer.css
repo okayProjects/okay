@@ -182,10 +182,35 @@ main {
 }
 
 @media(max-width: 1024px){
-    .carousel-wrapper, .video-wrapper {
-    height: 20vh;
-    margin: 0;
+    .single-offer-header {
+        margin-top: 50px;
+    }
+    
+    .carousel-wrapper {
+        height: 20vh;
+        width: 100vw;
+        margin: 5px auto;
+    }
+    
+    .video-wrapper {
+        margin: 0px auto;
+        width: 100vw;
+        height: 30vh;
+    }
+    .header-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
 }
+
+@media(max-width: 1024px) and (orientation: landscape){
+    
+    .carousel-wrapper {
+        height: 35vh;
+        width: 100vw;
+        margin: 5px auto;
+    }
 }
 
 

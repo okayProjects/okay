@@ -101,16 +101,16 @@ class About extends Component {
                 <img src={img2} alt='hero2' />
                 <img src={img3} alt='hero3' />
                 <div>
-                    <h1>Dla dzieci, młodzieży i dorosłych.</h1>
-                    <h2>Wygodnie z dojazdem do domu.</h2>
+                    <h1>Dla dzieci, młodzieży i dorosłych</h1>
+                    <h2>Wygodnie z dojazdem do domu</h2>
                 </div>
                 <div>
-                    <h1>Angielski dla biznesu.</h1>
-                    <h2>Profesjonalnie i elastycznie.</h2>
+                    <h1>Angielski dla biznesu</h1>
+                    <h2>Profesjonalnie i elastycznie</h2>
                 </div>
                 <div>
-                    <h1>Kursy w Anglii.</h1>
-                    <h2>Połączenie relaksu i praktyki.</h2>
+                    <h1>Kursy w Anglii</h1>
+                    <h2>Połączenie relaksu i praktyki</h2>
                 </div>
             </header>
         );
@@ -215,7 +215,7 @@ class About extends Component {
                 </div>
                 <div className="s3-right-wrapper">
                     <div className="clients">
-                        <h2>our clients</h2>
+                        <h2>współpracujemy z</h2>
                     </div>
                     <div className='logo-wrapper'>
                         <img src={logoHelvetia} alt="helvetia" />
@@ -246,7 +246,7 @@ class About extends Component {
                     {sectionFive}
                     {sectionThree}
                 </main>
-                {/* <Footer /> */}
+                <Footer />
                 <PopUpModal modalActive={this.state.modalActive} />
             </div>
         );

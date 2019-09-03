@@ -49,17 +49,6 @@
     margin-top: 4%;
 }
 
-/* .modal-picture-wrapper .modal-picture-slogan h3:first-child {
-    font-size: 25px;
-    letter-spacing: 7px;
-    padding: 0 0 2% 5%;
-} */
-/* .modal-picture-wrapper .modal-picture-slogan h3:last-child {
-    font-size: 30px;
-    text-transform: capitalize;
-    padding-left: 5%;
-} */
-
 .modal-picture-wrapper .modal-contact-details {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
@@ -156,4 +145,95 @@
 }
 .textarea-invalid.textarea-invalid {
     border: 2px solid red;
+}
+
+
+
+
+
+@media(max-width: 1024px) {
+    .modal-wrapper {
+        padding: 5px;
+        width: 95vw;
+        height: 60vh; 
+    }
+    
+    .modal-wrapper.active {
+        width: 95vw;
+        height: 60vh; 
+    }
+
+    .modal-wrapper .modal-picture-wrapper {
+        padding: 10px 0;
+        flex-basis: 30%;
+    }
+    
+    .modal-picture-wrapper .modal-picture-slogan {
+       align-self: center;
+    }
+    .modal-picture-wrapper .modal-picture-slogan > span {
+       margin: 0 10px;
+    }
+    
+    .modal-picture-wrapper .modal-contact-details {
+        padding: 0;
+    }
+    
+    .modal-contact-details h2 {
+        border-bottom: 1px solid aliceblue;
+        padding: 3px 6px;
+        font-size: 10px;
+    }
+    
+    .modal-contact-details .modal-span-wrapper {
+        padding: 0%;
+        font-size: 11px;
+    }
+    
+    .modal-span-wrapper span {
+        padding: 5px 0;
+    }
+    
+    .modal-span-wrapper span i {
+        padding: 0 3%;
+        font-size: 8px;
+    }
+    
+    .modal-wrapper .modal-form-wrapper {
+        margin-top: 10px;
+    }
+    .modal-wrapper .modal-form-wrapper form {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .modal-form-wrapper form input {
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .modal-form-wrapper form textarea {
+        padding: 5px;
+        margin-bottom: 30px;
+    }
+
+    .modal-form-wrapper div button {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}
+
+@media(max-width: 1024px) and (orientation: landscape) {
+    .modal-wrapper.active {
+        width: 75vw;
+        height: 91vh; 
+        -webkit-transform: translate(-50%,-50%); 
+                transform: translate(-50%,-50%);
+    }
+
+    .modal-form-wrapper form textarea {
+        margin-bottom: 10px;
+    }
 }

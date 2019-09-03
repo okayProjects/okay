@@ -1,4 +1,4 @@
-main section {
+main section.single-section {
     width: 80vw;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -139,10 +139,89 @@ main .single-section:nth-child(4) h2, main .single-section:nth-child(4) span {
 
 
 @media(max-width: 1024px){
-    .single-section {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+    main section.single-section {
+        width: 95vw;
+        flex-direction: column;
+        margin: 10px 0 0 5px;
+    } 
+    
+    main section:nth-child(even){
+        align-self: flex-start;
+    }
+    
+    .section-description-wrapper {
+        font-size: 12px;
+        line-height: 17px;
+    }
+
+    main section:nth-child(even) .section-img-wrapper {
+        order: 1;
+    }
+    .section-img-wrapper img {
+        width: 90%;
+        height: 150px;
+        padding: 10px;
+        border-radius: 30px;
+        margin: 0 auto;
+    }
+    
+    main .single-section h2 {
+        padding: 10px;
+        font-size: 18px;
+    }
+    
+    main .single-section span {
+        margin: 3px 0;
+    }
+    
+    .section-description-wrapper p {
+        padding: 10px 5px 0 5px;
+    }
+    
+    .section-description-wrapper .advantages-wrapper {
+        width: 90%;
+        margin-top: 10px;
+        padding: 0;
+    }
+    .section-description-wrapper .advantages-wrapper:hover {
+        width: 90%;
+        margin-top: 10px;
+        padding: 0 5px;
+    }
+    
+    .section-description-wrapper .advantages-wrapper i {
+        margin-right: 10px;
+    }
+    
+    .section-description-wrapper .course-terms-wrapper {
+        padding: 0 0px 0 15px;
+    }
+}
+
+@media(max-width: 1024px) and (orientation: landscape) {
+    main section.single-section {
+        width: 85vw;
+        margin: 10px;
+    } 
+    
+    main section:nth-child(even){
+        align-self: flex-end;
+    }
+    
+    .section-description-wrapper {
+        font-size: 14px;
+    }
+
+    .section-img-wrapper img {
+        width: 50%;
+        height: 120px;
+        padding: 10px;
+        border-radius: 30px;
+        margin: 0 auto;
+    }
+    
+    main .single-section h2 {
+        padding: 10px;
+        font-size: 21px;
     }
 }

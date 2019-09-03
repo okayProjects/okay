@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SingleCourseItem from '../SingleCourseItems/SingleCourseItem';
 import { connect } from 'react-redux';
 import * as actionTypes from '../../../Store/Actions/actions';
-// import './GeneralEnglishCourses.css';
 import axios from 'axios';
 import Footer from '../../UI/Footer/Footer';
 import Spinner from '../../UI/Spinner/Spinner';
@@ -43,8 +42,8 @@ class GeneralEnglishCourses extends Component {
         if (this.state.generalEnglishCourses) {
             section = this.state.generalEnglishCourses.map((course, index) =>
                 <SingleCourseItem key={course.id + index}
-                    sectionName={course.name}
                     id={course.id}
+                    sectionName={course.name}
                     courseDescription={course.descp}
                     courseAdvantages={course.advantages}
                     courseTarget={course.target}

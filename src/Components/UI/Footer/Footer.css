@@ -1,22 +1,48 @@
 footer {
-    /* margin-top: 100px; */
-    /* height: 100px; */
     width: 100%;
     background-color: #322;
     border-top: 3px solid #2AC503;
 }
 
-/* footer p {
-    font-size: 18px;
-    line-height: 70px;
-    color: aliceblue;
-} */
-
-footer .modal-picture-wrapper {
+footer .footer-picture-wrapper {
     display: flex;
 }
 
-footer .modal-contact-details .footer-button-wrapper {
+.footer-picture-wrapper .footer-logo {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-picture-wrapper .footer-contact-details {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 0;
+}
+
+.footer-contact-details .footer-span-wrapper {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+}
+
+footer .footer-contact-details .footer-button-wrapper {
     color: aliceblue;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 3px;
@@ -29,25 +55,107 @@ footer .modal-contact-details .footer-button-wrapper {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
     justify-content: space-between;
+    align-items: center;
     flex-basis: 100%;
 }
 
-footer .modal-contact-details .footer-button-wrapper h2 {
+footer .footer-contact-details .footer-button-wrapper h2 {
     border: none;
     font-size: 18px;
-    padding: 0;
+    padding: 0 40px 0 0;
 }
 
-footer .modal-contact-details .footer-button-wrapper button {
+footer .footer-contact-details .footer-button-wrapper button {
     font-size: 14px;
     padding: 7px 15px;
 }
 
-footer .modal-span-wrapper span {
+footer .footer-span-wrapper span {
     color: aliceblue;
     font-size: 17px;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    padding: 1% 0;
 }
 
-footer .modal-span-wrapper span i {
+footer .footer-span-wrapper span i {
+    padding: 0 3%;
+    color: rgb(42, 197, 3);
     font-size: 16px;
 }
+
+
+
+
+@media(max-width: 1024px) {
+
+    .footer-picture-wrapper .footer-logo {
+        margin-left: 15px;
+    }
+    
+    .footer-picture-wrapper .footer-contact-details {
+        padding: 15px 0;
+    }
+    
+    .footer-contact-details .footer-span-wrapper {
+            padding-bottom: 5px;
+    }
+    
+    footer .footer-contact-details .footer-button-wrapper {
+        letter-spacing: 0px;
+        border-bottom: 1px solid aliceblue;
+        padding: 0 0 5px 0;
+    }
+    
+    footer .footer-contact-details .footer-button-wrapper h2 {
+        font-size: 8px;
+        padding: 0;
+        letter-spacing: 2px;
+    }
+    
+    footer .footer-contact-details .footer-button-wrapper button {
+        font-size: 9px;
+        padding: 3px;
+        margin-right: 30px;
+        letter-spacing: 2px;
+    }
+    
+    footer .footer-span-wrapper span {
+        font-size: 11px;
+    }
+    
+    footer .footer-span-wrapper span i {
+        font-size: 9px;
+    }
+}
+
+@media(max-width: 1024px) and (orientation: landscape) {
+    footer .footer-contact-details .footer-button-wrapper h2 {
+        font-size: 8px;
+        padding: 0 20px 0 0;
+        letter-spacing: 2px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

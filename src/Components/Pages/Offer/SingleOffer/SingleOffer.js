@@ -72,7 +72,7 @@ const SingleOffer = (props) => {
 
         case 'angielski za granicą':
             const slidesAbroad = abroad.map((item, index) =>
-                <React.Fragment key={item.heading}>
+                <React.Fragment key={item.src}>
                     <img src={item.src} alt={`img + ${index}`} />
                 </React.Fragment>
             );

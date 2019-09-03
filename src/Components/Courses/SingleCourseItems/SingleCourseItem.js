@@ -14,7 +14,7 @@ const SingleCourseItem = (props) => {
 
     return (
         <>
-            <section className={`${props.sectionName} single-section`}>
+            <section className='single-section'>
                 <div className='section-description-wrapper'>
                     <h2>{props.sectionName}</h2>
                     <p>{props.courseDescription}</p>

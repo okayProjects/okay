@@ -28,13 +28,15 @@ nav.nav {
     flex-grow: 1;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .nav div.items-in-basket {
-    position: absolute;   
-    top: 36%;
-    right: 3%;
-    transform: translate(0, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5%;
+    height: 30px;
     color: #322;
     background-color: #fff;
     padding: 1px 5px;
@@ -104,8 +106,8 @@ nav.nav {
     }
     
     .nav div.items-in-basket {
-        top: 87%;
-        right: 45%;
+        width: 30px;
+        height: 20px;
         font-size: 15px;
         color: #322;
         background-color: #fff;
@@ -139,6 +141,7 @@ nav.nav {
         position: absolute;
         left: 0;
         background-color: #322;
+        border: .1px solid #2AC503;
         width: 100%;
         height: 5px;
         transition: top 0.2s .2s, bottom 0.2s, opacity .2s .2s, transform .2s .2s;
@@ -186,8 +189,5 @@ nav.nav {
     nav.visible {
         top: 0;
         left: 0;
-    }
-    .nav div.items-in-basket {
-        right: 51%;
     }
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SingleCourseItem from '../SingleCourseItems/SingleCourseItem';
 import { connect } from 'react-redux';
 import * as actionTypes from '../../../Store/Actions/actions';
-// import './Business.css';
 import axios from 'axios';
 import Footer from '../../UI/Footer/Footer';
 import Spinner from '../../UI/Spinner/Spinner';

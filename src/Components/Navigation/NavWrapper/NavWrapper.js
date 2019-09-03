@@ -52,10 +52,12 @@ class NavWrapper extends Component {
                 className={item.className} />
         ));
 
-        const itemsInBasket = <div className='items-in-basket'>
-            <i className="fas fa-shopping-basket"></i>
-            <span>{this.props.totalOrderedCourses.length}</span>
-        </div>
+        const itemsInBasket = (
+            <div className='items-in-basket'>
+                <i className="fas fa-shopping-basket"></i>
+                <p>{this.props.totalOrderedCourses.length}</p>
+            </div>
+        );
 
         let burgerClasses = ['burger']
         if (this.state.burgerActive) {
@@ -83,8 +85,8 @@ class NavWrapper extends Component {
                     <div className='nav-items-wrapper'>
                         <ul>
                             {menu}
+                            {this.props.totalOrderedCourses.length > 0 && itemsInBasket}
                         </ul>
-                        {this.props.totalOrderedCourses.length > 0 && itemsInBasket}
                     </div>
                 </nav>
             </>
