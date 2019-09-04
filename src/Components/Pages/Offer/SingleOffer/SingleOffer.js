@@ -95,7 +95,7 @@ const SingleOffer = (props) => {
                 {main}
             </main>
         </>
-    )
-}
+    );
+};
 
 export default SingleOffer;

@@ -119,7 +119,7 @@ class About extends Component {
             <section data-section='introduction' className="s1">
                 <div className="offer-one">
                     <i className="fa fa-globe"></i>
-                    <h2>Myśląc globalnie, pracując lokalnie</h2>
+                    <h2>Myśląc globalnie</h2>
                     <p>Lorem ipsum dolorsit amet, consectetur adipisicing elit. Corporis error magnam dolor numquam
                         provident cupiditate laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Corporis
@@ -139,7 +139,7 @@ class About extends Component {
                 </div>
                 <div className="offer-three">
                     <i className="fa fa-dove"></i>
-                    <h2>with passion and love</h2>
+                    <h2>with passion</h2>
                     <p>Lorem ipsum dolorsit amet, consectetur adipisicing elit. Corporis error magnam dolor numquam
                         provident cupiditate laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Corporis

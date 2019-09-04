@@ -44,8 +44,12 @@
 .modal-picture-wrapper .modal-picture-slogan {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;    
+    display: -webkit-box;    
+    display: -ms-flexbox;    
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 4%;
 }
 
@@ -165,11 +169,13 @@
 
     .modal-wrapper .modal-picture-wrapper {
         padding: 10px 0;
-        flex-basis: 30%;
+        -ms-flex-preferred-size: 30%;
+            flex-basis: 30%;
     }
     
     .modal-picture-wrapper .modal-picture-slogan {
-       align-self: center;
+       -ms-flex-item-align: center;
+           align-self: center;
     }
     .modal-picture-wrapper .modal-picture-slogan > span {
        margin: 0 10px;
@@ -206,7 +212,10 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     
     .modal-form-wrapper form input {

@@ -2,10 +2,12 @@
     position: fixed;
     top: 40%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
     height: 80vh;
     width: 95vw;
-    box-shadow: 5px 5px 10px #322;
+    -webkit-box-shadow: 5px 5px 10px #322;
+            box-shadow: 5px 5px 10px #322;
     border-radius: 5px;
     margin: 100px auto 0 auto;
     overflow: hidden;
@@ -16,26 +18,31 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
     opacity: 0;
-    animation: changeHeaderSlide 21s linear infinite;
+    -webkit-animation: changeHeaderSlide 21s linear infinite;
+            animation: changeHeaderSlide 21s linear infinite;
 }
 
 .about header img:nth-child(2) {
-    animation-delay: 7s;
+    -webkit-animation-delay: 7s;
+            animation-delay: 7s;
 }
 
 .about header img:nth-child(3) {
-    animation-delay: 14s;
+    -webkit-animation-delay: 14s;
+            animation-delay: 14s;
 }
 
 .about header div {
     position: absolute;
     top: 15%;
     right: 5%;
-    animation-delay: 7s;
+    -webkit-animation-delay: 7s;
+            animation-delay: 7s;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     color: white;
@@ -44,12 +51,14 @@
 .about header div:nth-of-type(2) {
     top: 12%;
     right:58%;
-    animation-delay: 7s;
+    -webkit-animation-delay: 7s;
+            animation-delay: 7s;
 }
 .about header div:nth-of-type(3) {
     top: 45%;
     right: 55%;
-    animation-delay: 14s;
+    -webkit-animation-delay: 14s;
+            animation-delay: 14s;
 }
 
 .about header div h1 {
@@ -64,7 +73,8 @@
     border-top-left-radius: 5px;
     background-color: rgba(51,34,34, .3);  
     text-shadow: 1px 3px #322;
-    animation: headerCaptionH1 21s infinite linear both;
+    -webkit-animation: headerCaptionH1 21s infinite linear both;
+            animation: headerCaptionH1 21s infinite linear both;
 }
 
 .about header div h2 {
@@ -77,16 +87,19 @@
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     text-shadow: 1px 2px #322;
-    animation: headerCaptionH2 21s infinite linear both;
+    -webkit-animation: headerCaptionH2 21s infinite linear both;
+            animation: headerCaptionH2 21s infinite linear both;
 }
 
 .about header div:nth-of-type(2) h1,
 .about header div:nth-of-type(2) h2 {
-    animation-delay: 7s;
+    -webkit-animation-delay: 7s;
+            animation-delay: 7s;
 }
 .about header div:nth-of-type(3) h1,
 .about header div:nth-of-type(3) h2 {
-    animation-delay: 14s;
+    -webkit-animation-delay: 14s;
+            animation-delay: 14s;
 }
 
 .about main {
@@ -515,6 +528,28 @@
     }
 }
 
+@-webkit-keyframes changeHeaderSlide {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    33.3333% {
+        opacity: 1;
+    }
+
+    38.3333% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 @keyframes changeHeaderSlide {
     0% {
         opacity: 0;
@@ -537,6 +572,28 @@
     }
 }
 
+@-webkit-keyframes headerCaptionH1 {
+    0% {
+        opacity: 0
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    28.5% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 @keyframes headerCaptionH1 {
     0% {
         opacity: 0
@@ -551,6 +608,31 @@
     }
 
     33% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes headerCaptionH2 {
+    0% {
+        opacity: 0
+    }
+    3% {
+        opacity: 0;
+    }
+
+    13.5% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    32% {
         opacity: 0;
     }
 
@@ -589,7 +671,8 @@
 @media (max-width: 1024px) {
     .about header {
         top: 0%;
-        transform: translate(-50%,-30%);
+        -webkit-transform: translate(-50%,-30%);
+                transform: translate(-50%,-30%);
         height: 50vh;
         width: 100vw;
         border-radius: 0;
@@ -638,7 +721,9 @@
     .s1 .offer-three, 
     .s1 .offer-four {
         padding: 0px;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     } 
     
     .s1 .offer-one, .s1 .offer-four {
@@ -664,12 +749,12 @@
     .s1 p {
         padding: 10px 5px;
         font-size: 13px;
-        text-align: start;
+        text-align: center;
     }
     
     .s2 {
         width: 100%;
-        margin: 20px auto;
+        margin: 20px auto 0 auto;
     }
     
     .s2 .photo-one-wrapper,
@@ -683,14 +768,14 @@
     .s2 .photo-two-wrapper button {
         font-size: 12px;
         letter-spacing: 0;
-        padding: 3px 8px;
-        }
+        padding: 1px 4px;
+    }
     
     .s2 .photo-one-wrapper div,
     .s2 .photo-two-wrapper div {
-        left: 11%;
+        left: 20%;
         top: 45%;
-        font-size: 12px;
+        font-size: 8px;
         letter-spacing: 2px;
         padding: 2px 5px;
         background-color: rgba(0, 0, 0, .3);
@@ -701,7 +786,10 @@
     } 
     
     .s3 {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         width: 100%;
         margin: 0 auto 20px auto;
         
@@ -709,9 +797,8 @@
     
     .s3 div {
         -ms-flex-preferred-size: 50%;
-            flex-basis: 0%;
+            flex-basis: 35%;
     }
-    
     .s3-left-wrapper {
         padding: 5px;
     }
@@ -744,8 +831,8 @@
     
     .s3-right-wrapper .clients h2 {
         margin: 0 auto;
-        padding: 10px 0;
-        font-size: 25px;
+        padding: 25px 0;
+        font-size: 20px;
     }
     
     .s3-right-wrapper .logo-wrapper {
@@ -766,11 +853,20 @@
     }
 
     .s5 div {
-        height: 50px;
+        height: 100px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     .s5 p, .s5 span {
-        line-height: 37.5px;
+        line-height: 0;
         font-size: 25px;
         letter-spacing: 4px;
     }
@@ -785,7 +881,8 @@
 @media (max-width: 1024px) and (orientation: landscape) {
     .about header {
         top: 20%;
-        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
         height: 100vh;
         border-radius: 0;
     }
@@ -820,11 +917,15 @@
         margin-top: 100vh;
     }
 
+    .s1 {
+        width: 80%;
+    }
+
     .s2 .photo-one-wrapper div,
     .s2 .photo-two-wrapper div {
-        left: 37%;
+        left: 45%;
         top: 65%;
-        font-size: 14px;
+        font-size: 10px;
     }
     
     .s2 div:nth-child(2) div {
@@ -835,7 +936,6 @@
         font-size: 14px;
     }
 
-    
     .s3 {
         width: 100%;
         margin: 0 auto 20px auto;
@@ -875,8 +975,10 @@
     }
 
     .s3-right-wrapper .clients h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
+
+ 
 
     .s3-right-wrapper .logo-wrapper {
         padding: 0 10px;

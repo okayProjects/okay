@@ -5,15 +5,23 @@ footer {
 }
 
 footer .footer-picture-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
 .footer-picture-wrapper .footer-logo {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;    
+    display: -webkit-box;    
+    display: -ms-flexbox;    
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .footer-picture-wrapper .footer-contact-details {
@@ -55,8 +63,11 @@ footer .footer-contact-details .footer-button-wrapper {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
     justify-content: space-between;
-    align-items: center;
-    flex-basis: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
 }
 
 footer .footer-contact-details .footer-button-wrapper h2 {

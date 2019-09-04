@@ -1,13 +1,21 @@
 .courses-purchased-wrapper {
     padding-bottom: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     min-height: 90vh;
 }
 
 .purchased-course-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     border: 1px solid #322;
     margin: 80px 0 0 50px;
     width: 45vw;
@@ -15,19 +23,31 @@
 }
 
 .empty-purchasedcourses-message-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100vw;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 
 @media (max-width: 1024px) {
     .courses-purchased-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         margin-top: 70px;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
 
     .purchased-course-wrapper {
@@ -36,8 +56,12 @@
     }
     
     .empty-purchasedcourses-message-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 100vw;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 }

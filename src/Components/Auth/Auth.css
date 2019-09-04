@@ -1,8 +1,14 @@
 .auth-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     height: 100vh;
     background-image: url('../../images/auth/pencils.jpg');
     background-size: cover;
@@ -10,13 +16,24 @@
 }
 
 .form {
-    flex-basis: 30%;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
     height: 50%;
     padding: 30px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;  
+    -webkit-transition: .8s;  
     transition: .8s;     
 }
 
@@ -24,15 +41,18 @@
     background-color: rgb(143, 139, 139);
     -webkit-box-shadow: 2px 2px 2px 2px #322;
     box-shadow: 1px 3px 3px #322;  
-    transform: scale(1.1); 
+    -webkit-transform: scale(1.1);  
+            transform: scale(1.1); 
     border-radius: 5px;
 }
 
 .form h3 {
     color: #322;
     font-size: 20px;
-    flex-basis: 20%;
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
     font-family: 'Courier New', Courier, monospace;
+    -webkit-transition: .5s;
     transition: .5s;
 }
 
@@ -46,11 +66,14 @@
     color: red;
     font-weight: bold;
     opacity: 0;
-    animation: error-message 2s infinite linear;
+    -webkit-animation: error-message 2s infinite linear;
+            animation: error-message 2s infinite linear;
 }
   
 .form form {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     text-align: center;
 }
     
@@ -77,12 +100,29 @@
 
 .password-reset {
     color: #322;
-    /* font-size: 20px; */
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 .form button:hover a {
     color: #322222;
+}
+  
+
+@-webkit-keyframes error-message {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
   
 
@@ -104,11 +144,16 @@
 
 @media(max-width: 1024px) {
     .auth-wrapper {
-        flex-direction: column;
-        justify-content: space-around;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
     }
     .form {
-        flex-basis: 30%;
+        -ms-flex-preferred-size: 30%;
+            flex-basis: 30%;
         margin: 0 10px;
         padding: 0; 
     }
@@ -116,12 +161,14 @@
         background-color: initial;
         -webkit-box-shadow: initial;
         box-shadow: initial;  
-        transform: initial; 
+        -webkit-transform: initial;  
+                transform: initial; 
         border-radius: initial;
     }
     .form h3 {
         font-size: 15px;
-        flex-basis: 20%;
+        -ms-flex-preferred-size: 20%;
+            flex-basis: 20%;
     }
     .form:hover h3 {
         color: initial;    
@@ -155,7 +202,8 @@
 
 @media  (max-width: 1024px) and (orientation: landscape){
 .form {
-    flex-basis: 42%;
+    -ms-flex-preferred-size: 42%;
+        flex-basis: 42%;
     height: 50%;
     margin: 0 10px;
     padding: 0; 
@@ -163,7 +211,8 @@
 }
 .form h3 {
     font-size: 15px;
-    flex-basis: 20%;
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
 }
 
 .form span {

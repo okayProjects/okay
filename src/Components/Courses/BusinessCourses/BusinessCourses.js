@@ -10,6 +10,7 @@ import pic2 from '../../../images/businesscources/manwitflag.jpg';
 import pic3 from '../../../images/businesscources/puzzles.jpg';
 import pic4 from '../../../images/businesscources/businessAbroad.jpg';
 
+
 const pics = [pic1, pic2, pic3, pic4];
 
 class BusinessCourses extends Component {

@@ -10,12 +10,14 @@
     /* height: calc(100vh - 60px); */
     width: 90vw;
     margin: 80px auto 100px auto;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .offer-slogan-wrapper {
     position: relative;
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     margin-bottom: 4%;
     height: 80px;
     background-color: #322;
@@ -28,21 +30,25 @@
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
     font-size: 40px;
     width: 100%;
     text-transform: capitalize;
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: 5px;
-    animation: changeSloganText 24s linear infinite both;
+    -webkit-animation: changeSloganText 24s linear infinite both;
+            animation: changeSloganText 24s linear infinite both;
 }
 
 .offer-slogan-wrapper h2:nth-child(2) {
-    animation-delay: 8s;
+    -webkit-animation-delay: 8s;
+            animation-delay: 8s;
 }
 
 .offer-slogan-wrapper h2:nth-child(3) {
-    animation-delay: 16s;
+    -webkit-animation-delay: 16s;
+            animation-delay: 16s;
 }
 
 .single-offer-wrapper {
@@ -140,29 +146,68 @@
 }
 
 
-@keyframes changeSloganText {
+@-webkit-keyframes changeSloganText {
     0% {
-        transform: translate(100%, -50%);
+        -webkit-transform: translate(100%, -50%);
+                transform: translate(100%, -50%);
     }
 
     3% {
-        transform: translate(100%, -50%);
+        -webkit-transform: translate(100%, -50%);
+                transform: translate(100%, -50%);
     }
 
     6% {
-        transform: translate(0, -50%);
+        -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
     }
 
     30% {
-        transform: translate(0, -50%);
+        -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
     }
 
     33% {
-        transform: translate(-100%, -50%);
+        -webkit-transform: translate(-100%, -50%);
+                transform: translate(-100%, -50%);
     }
 
     100% {
-        transform: translate(-100%, -50%);
+        -webkit-transform: translate(-100%, -50%);
+                transform: translate(-100%, -50%);
+    }
+}
+
+
+@keyframes changeSloganText {
+    0% {
+        -webkit-transform: translate(100%, -50%);
+                transform: translate(100%, -50%);
+    }
+
+    3% {
+        -webkit-transform: translate(100%, -50%);
+                transform: translate(100%, -50%);
+    }
+
+    6% {
+        -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+    }
+
+    30% {
+        -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+    }
+
+    33% {
+        -webkit-transform: translate(-100%, -50%);
+                transform: translate(-100%, -50%);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%, -50%);
+                transform: translate(-100%, -50%);
     }
 }
 
@@ -177,15 +222,20 @@
         height: 140vh;
     }
     .single-offer-wrapper:hover {
-        box-shadow: initial;
-        transform: initial;
+        -webkit-box-shadow: initial;
+                box-shadow: initial;
+        -webkit-transform: initial;
+                transform: initial;
     }
 }
 
 
 @media  (max-width: 1024px) and (orientation: landscape){
     .offer-wrapper {
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
         height: 80vh;
         width: 98vw;
     }
@@ -202,7 +252,8 @@
     
     .single-offer-wrapper {
         height: 220px;
-        flex-basis: 32%;
+        -ms-flex-preferred-size: 32%;
+            flex-basis: 32%;
     }
 
     .offer-info h2 {

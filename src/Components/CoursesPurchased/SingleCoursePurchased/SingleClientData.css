@@ -1,12 +1,22 @@
 .client-data-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .client-personal-data-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
     background-color: #322;
     color: #fff;
@@ -15,7 +25,8 @@
 }
 
 .client-personal-data-wrapper span:first-of-type {
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     font-size: 18px;
     font-weight: 300;
     text-align: center;
@@ -30,7 +41,8 @@
 }
 
 .client-personal-data-wrapper span:last-of-type {
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     text-align: center;
     text-transform: lowercase;
 }
@@ -47,8 +59,11 @@
 } */
 .clients-order-comments {
     border-bottom: 1px solid #322;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     text-align: justify;
     width: 100%;
 }
@@ -64,12 +79,16 @@
 }
 
 .unavailable-days-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .unavailable-days-wrapper ul {
     padding: 5px 0;
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
 }
 
 .unavailable-days-wrapper ul>li {
