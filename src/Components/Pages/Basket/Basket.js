@@ -198,7 +198,10 @@ class Basket extends Component {
         this.props.orderedCourses.forEach(course => allPrices.push(course.price))
 
         const totalPrice = allPrices.reduce((arr, ell) => {
-            return arr + ell;
+            if (typeof (ell) === 'string') {
+                ell = 0;
+                return arr + ell;
+            } else return arr + ell
         });
 
         const courses = this.props.orderedCourses.map(course => {
@@ -206,7 +209,8 @@ class Basket extends Component {
                 <div key={course.id} className='single-course-wrapper'>
                     <div>
                         <h1>Zamawiasz {course.name}</h1>
-                        <span>{`Cena tego kursu to ${course.price} PLN`}</span>
+                        <span>{`Cena tego kursu to ${course.price}`}</span>
+                        <p>Uwaga. Zapłacisz dopiero po potwierdzeniu dostępności terminu.</p>
                     </div>
                     <div className='basket-button-wrapper'>
                         <Button click={() => this.props.onRemoveCourseFromBasket(course.id)} btnType='offer-info-button'>Usuń ten kurs</Button>
@@ -247,7 +251,7 @@ class Basket extends Component {
                     <div className='basket-form-wrapper'>
                         <div>
                             <p>Wypełnij formularz kursanta</p>
-                            <p>{`Cena całkowita: ${totalPrice}PLN`}</p>
+                            <p>{`Cena całkowita: ${totalPrice}`}</p>
                         </div>
                         {courses}
                         <form onSubmit={this.submitOrderHandler} className='basket-form'>

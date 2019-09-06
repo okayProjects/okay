@@ -7,7 +7,7 @@ const input = (props) => {
     //     inputClass = ['orderinputs-wrapper-input', 'invalid-input']
     // }
     let inputElement = null;
-    // console.log(props.invalidStyle, input.inputTouchedByUser);
+
     switch (props.elementType) {
 
         case ('input'):

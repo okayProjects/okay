@@ -132,7 +132,7 @@ class FormWrapper extends Component {
                 <div className='workdays-wrapper'>
                     <h3>Zaznacz tylko te dni i czas kiedy zdecydowanie NIE możesz mieć zajęć</h3>
                     {workdays}
-                    <Form elementType='checkbox' labelId='userAcceptance' label='Zgodę wyrażam wszelaką' change={this.props.change} checked={this.props.checkedUserAcceptance} elementConfiguration={
+                    <Form elementType='checkbox' labelId='userAcceptance' label='Zgodnie z art. 6 ust. 1 lit A Rozporządzenia Parlamentu Europejskiego i Rady (UE) z dnia 27 kwietnia 2016 r. wyrażam zgodę na przetwarzanie moich danych osobowych (imię, nazwisko, adres email, numer telefonu) przez Okay język angielski oraz przez podmioty współpracujące, w celu przeprowadzenia procesu rekrutacji. Wyrażam zgodę na korzystanie z telekomunikacyjnego urządzenia końcowego (np. telefonu) przez Okay język angielski, w celu prowadzenia marketingu bezpośredniego, zgodnie z art. 172 ustawy z dnia 16 lipca 2004r. Prawo telekomunikacyjne (Dz. U. z 2014 r. poz. 243 ze zm.).' change={this.props.change} checked={this.props.checkedUserAcceptance} elementConfiguration={
                         {
                             type: 'checkbox',
                             name: 'accept',

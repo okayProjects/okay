@@ -118,43 +118,27 @@ class About extends Component {
         const sectionOne = (
             <section data-section='introduction' className="s1">
                 <div className="offer-one">
-                    <i className="fa fa-globe"></i>
-                    <h2>Myśląc globalnie</h2>
-                    <p>Lorem ipsum dolorsit amet, consectetur adipisicing elit. Corporis error magnam dolor numquam
-                        provident cupiditate laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Corporis
-                        error magnam dolor numquam provident cupiditate laudantium. Lorem ipsum dolor sit amet,
-                        consectetur
+                    <i className="fas fa-graduation-cap"></i>
+                    <h2>dla nastolatków</h2>
+                    <p>To skrojone wyłącznie na Twoją miarę zajęcia językowe z dojazdem do ucznia. W przyjaznej atmosferze swojego domu opanujesz język bez stresu i przełamiesz lęk przed mówieniem po angielsku, a dzięki lekcjom typu one-to-one masz pewność, że lektor jest wyłącznie dla Ciebie. Wszystkie zajęcia prowadzone są przy pomocy multimediów.
                 </p>
                 </div>
                 <div className="offer-two">
-                    <i className="fa fa-project-diagram"></i>
-                    <h2>bespoke projects</h2>
-                    <p>Lorem ipsum dolorsit amet, consectetur adipisicing elit. Corporis error magnam dolor numquam
-                        provident cupiditate laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Corporis
-                        error magnam dolor numquam provident cupiditate laudantium. Lorem ipsum dolor sit amet,
-                        consectetur
+                    <i className="far fa-calendar-check"></i>
+                    <h2>do egzaminów</h2>
+                    <p>Czy to sprawdzian po ósmej klasie, czy może matura, nieważne! Wspólnie opracujemy strategie egzaminacyjne, nadrobimy zaległości, utrwalimy materiał. Zajęcia z dojazdem do domu, na których rozwiniesz wszystkie sprawności językowe w oparciu o zadania zgodne z wymaganiami Centralnej Komisji Egzaminacyjnej.
                 </p>
                 </div>
                 <div className="offer-three">
-                    <i className="fa fa-dove"></i>
-                    <h2>with passion</h2>
-                    <p>Lorem ipsum dolorsit amet, consectetur adipisicing elit. Corporis error magnam dolor numquam
-                        provident cupiditate laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Corporis
-                        error magnam dolor numquam provident cupiditate laudantium. Lorem ipsum dolor sit amet,
-                        consectetur
+                    <i className="fas fa-users"></i>
+                    <h2>dla dorosłych</h2>
+                    <p>Postanowione – chcesz mówić po angielsku. Masz dość niepowodzeń. Nieważne, że kolejny raz podchodzisz do nauki języka. A może dopiero szukasz kursu dla dorosłych. Dzięki odpowiednio dobranemu programowi nauczania oraz metodom dostosowanym do wieku i aktualnego poziomu studentów szybko zaczniesz być niezależny językowo. Bo liczy się komunikatywność!
                 </p>
                 </div>
                 <div className="offer-four">
-                    <i className="fa fa-business-time"></i>
-                    <h2>B2B cooperation</h2>
-                    <p>Lorem ipsum dolorsit amet, consectetur adipisicing elit. Corporis error magnam dolor numquam
-                        provident cupiditate laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Corporis
-                        error magnam dolor numquam provident cupiditate laudantium. Lorem ipsum dolor sit amet,
-                        consectetur
+                    <i className="fas fa-briefcase"></i>
+                    <h2>dla biznesu</h2>
+                    <p>Tylko szyte na miarę kursy biznesowego języka angielskiego. Zawsze poprzedzone analizą indywidualnych potrzeb językowych każdej firmy. Elastyczne i dopasowane do charakteru prowadzonego biznesu, uwzględniające indywidualne potrzeby pracowników. Językowe wsparcie dla eventów bizesowych typu konferencje, prezentacje, sympozja.
                 </p>
                 </div>
             </section>
@@ -203,12 +187,8 @@ class About extends Component {
                     <div>
                         <h3>Więcej niż lekcja
                     </h3>
-                        <h4>With love, With care</h4>
-                        <p>With a talented team of skilled professionals, we are adept in a multitude of technologies,
-                            platforms, programming languages and software tools. At okayProjects, we continuously
-                            innovate
-                            by learning and adopting latest industry trends and technologies. From web designing to mobile
-                            application development, we have proficiency in managing a number of complex projects.
+                        <h4>Profesjonalnie, z pasją</h4>
+                        <p>Moi kursanci to osoby wymagające, dla których ważny jest osobisty rozwój, podnoszenie swoich kwalifikacji oraz poczucie, że dobrze zainwestowali swój czas. Dzięki nieustannemu dbaniu o osobistyty rozwój poparty międzynarodowymi certyfikatami, takimi jak Certificate of Proficiency in English (University of Cambridge ESOL Examinations), czy First Certificate for Teachers of Business English zdanemu w Londyńskiej Izbie Przemysłowo Handlowej mogę zaproponować swoim kursantom sesje z elementami pracy coachingowej z jasno i skutecznie zdefiniowanymi celami językowymi.
                     </p>
                         <Button btnType='linesInside' click={this.modalActivatorHandler}>Więcej</Button>
                     </div>

@@ -2,11 +2,11 @@
     position: fixed;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%,-250%);
-            transform: translate(-50%,-250%);
+    -webkit-transform: translate(-50%,-350%);
+            transform: translate(-50%,-350%);
     padding: 30px;
-    -webkit-transition: 1s;
-    transition: 1s;
+    -webkit-transition: .7s;
+    transition: .7s;
     width: 75vw;
     height: 80vh; 
 }
@@ -20,7 +20,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     margin: 0 auto;
-    background-color: #999;
+    background-color: rgb(153,153,153);
     width: 75vw;
     height: 73vh; 
     -webkit-transform: translate(-50%,-50%); 
@@ -159,12 +159,12 @@
     .modal-wrapper {
         padding: 5px;
         width: 95vw;
-        height: 60vh; 
+        height: 70vh; 
     }
     
     .modal-wrapper.active {
         width: 95vw;
-        height: 60vh; 
+        height: 70vh; 
     }
 
     .modal-wrapper .modal-picture-wrapper {
@@ -193,7 +193,7 @@
     
     .modal-contact-details .modal-span-wrapper {
         padding: 0%;
-        font-size: 11px;
+        font-size: 9px;
     }
     
     .modal-span-wrapper span {
@@ -236,13 +236,25 @@
 
 @media(max-width: 1024px) and (orientation: landscape) {
     .modal-wrapper.active {
-        width: 75vw;
-        height: 91vh; 
-        -webkit-transform: translate(-50%,-50%); 
-                transform: translate(-50%,-50%);
+        width: 70vw;
+        height: 97vh; 
+        -webkit-transform: translate(-50%,-51%); 
+                transform: translate(-50%,-51%);
+    }
+    
+
+    .modal-contact-details .modal-span-wrapper {
+        padding: 0%;
+        font-size: 11px;
     }
 
     .modal-form-wrapper form textarea {
         margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    .modal-form-wrapper form input {
+        padding: 5px;
+        margin-bottom: 5px;
     }
 }

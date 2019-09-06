@@ -132,7 +132,7 @@ footer .footer-span-wrapper span i {
     }
     
     footer .footer-span-wrapper span {
-        font-size: 11px;
+        font-size: 9px;
     }
     
     footer .footer-span-wrapper span i {
@@ -145,6 +145,14 @@ footer .footer-span-wrapper span i {
         font-size: 8px;
         padding: 0 20px 0 0;
         letter-spacing: 2px;
+    }
+
+    footer .footer-span-wrapper span i {
+        font-size: 11px;
+    }
+
+    footer .footer-span-wrapper span {
+        font-size: 12px;
     }
 }
 

@@ -61,8 +61,6 @@
     padding: 10px;
 }
 
-
-
 .basket-form-wrapper {
     width: 75vw;
     margin: 70px 0;
@@ -132,8 +130,7 @@
 
 .accept label {
     color: initial;
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 12px;
     margin-left: 10px;
 }
 
@@ -200,6 +197,10 @@
         font-size: 14px;
     }
 
+    .single-course-wrapper p {
+        font-size: 11px;
+    }
+
     .single-course-wrapper .basket-button-wrapper {
         height: 30px;
         margin-top: 20px;
@@ -221,13 +222,13 @@
     }
     
     .accept label {
-        font-size: 13px;
+        font-size: 9px;
         margin-left: 5px;
     }
     
     .accept input {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
     }
 }
 
@@ -236,7 +237,7 @@
         width: 28%;
     }
     .accept label {
-        font-size: 14px;
+        font-size: 10px;
         margin-left: 2px;
     }
 }
