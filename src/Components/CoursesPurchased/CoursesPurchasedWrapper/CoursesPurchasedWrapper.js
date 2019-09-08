@@ -48,9 +48,11 @@ class CoursesPurchased extends Component {
         return (
             <>
                 <Navigation />
-                <div className='courses-purchased-wrapper'>
-                    {coursesPurchased}
-                </div>
+                <main>
+                    <div className='courses-purchased-wrapper'>
+                        {coursesPurchased}
+                    </div>
+                </main>
                 <Footer />
             </>
         );

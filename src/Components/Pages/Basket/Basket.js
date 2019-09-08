@@ -245,32 +245,34 @@ class Basket extends Component {
         };
 
         let basket = (
-            <div className='basket-wrapper'>
-                <Navigation />
-                {this.props.orderedCourses.length <= 0 ? basketMessage :
-                    <div className='basket-form-wrapper'>
-                        <div>
-                            <p>Wypełnij formularz kursanta</p>
-                            <p>{`Cena całkowita: ${totalPrice}`}</p>
-                        </div>
-                        {courses}
-                        <form onSubmit={this.submitOrderHandler} className='basket-form'>
-                            <FormBasketWrapper
-                                value={this.state.user}
-                                valueUnavailableHoursFrom={this.state.user.unavailableHoursFrom}
-                                valueUnavailableHoursTo={this.state.user.unavailableHoursTo}
-                                change={this.inputHandler}
-                                checkedUnavailableDays={this.state.user.unavailableDays}
-                                checkedUserAcceptance={this.state.userAcceptance}
-                                invalidStyle={this.state.validation}
-                            />
-                            <div className='basketform-button-wrapper'>
-                                <Button btnType='offer-info-button'>Zamawiam wybrane kursy</Button>
+            <main>
+                <div className='basket-wrapper'>
+                    <Navigation />
+                    {this.props.orderedCourses.length <= 0 ? basketMessage :
+                        <div className='basket-form-wrapper'>
+                            <div>
+                                <p>Wypełnij formularz kursanta</p>
+                                <p>{`Cena całkowita: ${totalPrice}`}</p>
                             </div>
-                        </form>
-                    </div>}
-                {this.state.redirect && <Redirect to='/offer' />}
-            </div>
+                            {courses}
+                            <form onSubmit={this.submitOrderHandler} className='basket-form'>
+                                <FormBasketWrapper
+                                    value={this.state.user}
+                                    valueUnavailableHoursFrom={this.state.user.unavailableHoursFrom}
+                                    valueUnavailableHoursTo={this.state.user.unavailableHoursTo}
+                                    change={this.inputHandler}
+                                    checkedUnavailableDays={this.state.user.unavailableDays}
+                                    checkedUserAcceptance={this.state.userAcceptance}
+                                    invalidStyle={this.state.validation}
+                                />
+                                <div className='basketform-button-wrapper'>
+                                    <Button btnType='offer-info-button'>Zamawiam wybrane kursy</Button>
+                                </div>
+                            </form>
+                        </div>}
+                    {this.state.redirect && <Redirect to='/offer' />}
+                </div>
+            </main>
         );
 
         if (!this.props.userIsAuthenticated && this.props.orderedCourses.length > 0) {
@@ -279,7 +281,9 @@ class Basket extends Component {
 
         return (
             <>
-                {basket}
+                <main>
+                    {basket}
+                </main>
                 <Footer />
             </>
         );

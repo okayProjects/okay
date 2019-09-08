@@ -215,12 +215,18 @@
 @media(max-width: 1024px){
     .offer-wrapper {
         margin-top: 60px;
+        margin-bottom: 0;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        height: 140vh;
+        /* height: 140vh; */
     }
+
+    .single-offer-wrapper {
+        margin-bottom: 30px;
+    }
+
     .single-offer-wrapper:hover {
         -webkit-box-shadow: initial;
                 box-shadow: initial;

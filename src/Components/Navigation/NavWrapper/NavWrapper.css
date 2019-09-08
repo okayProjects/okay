@@ -100,9 +100,6 @@ nav.nav {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        -webkit-box-align: start;
-            -ms-flex-align: start;
-                align-items: flex-start;
         background-color: #322;
         border-radius: 5px;
         border-top-left-radius: 0;
@@ -218,6 +215,19 @@ nav.nav {
         top: calc(50% - 5px);
         -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);
+    }
+    .basket-on-burger {
+        position: absolute;
+        top: -10%;
+        left: -70%;
+        z-index: 300;
+    }
+
+    .basket-on-burger-active {
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+        top: -115%;
+        left: 40%;
     }
 }
 

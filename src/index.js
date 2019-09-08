@@ -9,6 +9,7 @@ import B2BReducer from './Store/Reducers/B2BReducer';
 import AbroadReducer from './Store/Reducers/AbroadReducer';
 import AuthReducer from './Store/Reducers/Auth';
 import OrderSubmitReducer from './Store/Reducers/OrderSubmit';
+import PopUpModalControllerReducer from './Store/Reducers/PopUpModalController';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
     B2BReducer,
     AbroadReducer,
     OrderSubmitReducer,
-    AuthReducer
+    AuthReducer,
+    PopUpModalControllerReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));

@@ -9,6 +9,7 @@
 .basket-empty-message {
     position: relative;
     width: 75%;
+    height: 50%;
     text-align: center;
     letter-spacing: 3px;
     color: #fff;

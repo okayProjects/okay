@@ -8,7 +8,6 @@ import CoursesPurchasedWrapper from '../../CoursesPurchased/CoursesPurchasedWrap
 class PartnerZone extends Component {
 
     render() {
-
         return (
             this.props.userIsAuthenticated ? <CoursesPurchasedWrapper /> : <Auth />
         );

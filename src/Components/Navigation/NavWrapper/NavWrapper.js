@@ -59,9 +59,11 @@ class NavWrapper extends Component {
             </div>
         );
 
+        let basketBurgerClasses = ['basket-on-burger'];
         let burgerClasses = ['burger']
         if (this.state.burgerActive) {
-            burgerClasses = ['burger', 'active']
+            burgerClasses = ['burger', 'active'];
+            basketBurgerClasses = ['basket-on-burger', 'basket-on-burger-active']
         }
         let menuClasses = ['nav']
         if (this.state.burgerActive) {
@@ -78,6 +80,9 @@ class NavWrapper extends Component {
                         <span></span>
                         <span></span>
                         <span></span>
+                        <div className={basketBurgerClasses.join(' ')}>
+                            {this.props.totalOrderedCourses.length > 0 && itemsInBasket}
+                        </div>
                     </div>
                     <div className='nav-logo-wrapper'>
                         <Link to='/'><Logo /></Link>

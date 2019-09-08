@@ -11,6 +11,7 @@ import pic3 from '../../../images/gecourses/man.jpg';
 import pic4 from '../../../images/gecourses/tongue.jpg';
 import pic5 from '../../../images/gecourses/flag.jpg';
 
+
 const pics = [pic1, pic2, pic3, pic4, pic5];
 
 class GeneralEnglishCourses extends Component {
@@ -41,7 +42,7 @@ class GeneralEnglishCourses extends Component {
         let section = <Spinner />
         if (this.state.generalEnglishCourses) {
             section = this.state.generalEnglishCourses.map((course, index) =>
-                <SingleCourseItem key={course.id + index}
+                <SingleCourseItem key={course.id}
                     id={course.id}
                     sectionName={course.name}
                     courseDescription={course.descp}
@@ -52,7 +53,8 @@ class GeneralEnglishCourses extends Component {
                     src={course.src}
                     alt={'pic' + index}
                     course={course}
-                    addToBasket={(course) => this.props.onToggleCourseBasket(course)} />
+                    addToBasket={(course) => this.props.onToggleCourseBasket(course)
+                    } />
             );
         };
 

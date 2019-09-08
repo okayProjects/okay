@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Footer.css';
 import Logo from '../Logo/Logo';
 import Button from '../Buttons/Button';
 import PopUpModal from '../../UI/PopUpModal/PopUpModal';
+import * as actionTypes from '../../../Store/Actions/actions';
 
 class Footer extends Component {
-
-    state = {
-        modalActive: false
-    }
-
-    modalActivatorHandler = () => {
-        this.setState(prevState => {
-            return { modalActive: prevState.modlaActive = true };
-        });
-    };
 
     render() {
         return (
@@ -31,15 +23,21 @@ class Footer extends Component {
                             <span><i className="far fa-lightbulb"></i>Sprawy pilne: 24/7</span>
                         </div>
                         <div className='footer-button-wrapper'>
-                            <Button btnType='linesInside' click={this.modalActivatorHandler}>Wyślij wiadomość</Button>
+                            <Button btnType='linesInside' click={this.props.onModalActivator}>Wyślij wiadomość</Button>
                             <h2>Twój rozwój w nowym wymiarze</h2>
                         </div>
                     </div>
                 </div>
-                <PopUpModal modalActive={this.state.modalActive} />
+                <PopUpModal />
             </footer>
         );
     };
 };
 
-export default Footer;
+const mapDispatchToProps = dispatch => {
+    return {
+        onModalActivator: () => dispatch({ type: actionTypes.POP_UP_MODAL_ACTIVATED })
+    };
+};
+
+export default connect(null, mapDispatchToProps)(Footer);

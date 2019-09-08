@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './PopUpModal.css';
 import Logo from '../Logo/Logo';
 import Form from '../Form/Form';
 import Button from '../../UI/Buttons/Button';
 import axios from 'axios';
 import { checkValidity } from '../SharedFunctions/checkValidity';
+import * as actionTypes from '../../../Store/Actions/actions';
 
 const form = [
     {
@@ -62,21 +64,12 @@ class PopUpModal extends Component {
         userEmail: '',
         userTelephoneNumber: '',
         modalComments: '',
-        modalNotActive: false,
         validation: {
             userName: false,
             userEmail: false,
             userTelephoneNumber: false,
             modalComments: false
         }
-    };
-
-    modalDisactivatorHandler = () => {
-        this.setState(prevState => {
-            return {
-                modalNotActive: prevState.modalNotActive = true,
-            };
-        });
     };
 
     inputHandler = (e) => {
@@ -102,7 +95,7 @@ class PopUpModal extends Component {
             Imię: this.state.userName,
             Telefon: this.state.userTelephoneNumber,
             Email: this.state.userEmail,
-            Komentarz: this.state.userComments
+            Komentarz: this.state.modalComments
         };
 
         if (this.state.validation.userEmail && this.state.validation.userName & this.state.validation.userTelephoneNumber && this.state.validation.modalComments) {
@@ -115,7 +108,6 @@ class PopUpModal extends Component {
                                 userEmail: prevState.userEmail = '',
                                 userTelephoneNumber: prevState.userTelephoneNumber = '',
                                 userComments: prevState.userComments = '',
-                                modalNotActive: prevState.modalNotActive = true
                             };
                         });
                     }
@@ -124,6 +116,7 @@ class PopUpModal extends Component {
                     console.log(err);
                 });
         } else return;
+        this.props.onModalDisactivator();
     };
 
     render() {
@@ -140,7 +133,7 @@ class PopUpModal extends Component {
         ));
 
         let modalClasses = ['modal-wrapper'];
-        if (this.props.modalActive && !this.state.modalNotActive) {
+        if (this.props.modalActive) {
             modalClasses = ['modal-wrapper', 'active'];
         }
         else {
@@ -167,7 +160,7 @@ class PopUpModal extends Component {
                     <form onSubmit={this.submitHandler}>
                         {popUpModalForm}
                         <div >
-                            <Button btnType='offer-info-button' click={this.modalDisactivatorHandler}>Anuluj</Button>
+                            <Button btnType='offer-info-button' click={this.props.onModalDisactivator}>Anuluj</Button>
                             <Button btnType='offer-info-button'>Wyślij</Button>
                         </div>
                     </form>
@@ -177,4 +170,16 @@ class PopUpModal extends Component {
     };
 };
 
-export default PopUpModal;
+const mapStateToProps = state => {
+    return {
+        modalActive: state.PopUpModalControllerReducer.modalActive
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onModalDisactivator: () => dispatch({ type: actionTypes.POP_UP_MODAL_DISACTIVATED })
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PopUpModal);

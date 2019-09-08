@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Navigation from '../../Navigation/NavWrapper/NavWrapper';
 import photoOne from '../../../images/s2/photo-one.jpg';
 import photoTwo from '../../../images/s2/photo-two.jpg';
@@ -15,11 +16,9 @@ import Footer from '../../UI/Footer/Footer';
 import './About.css';
 import $ from 'jquery';
 import PopUpModal from '../../UI/PopUpModal/PopUpModal';
+import * as actionTypes from '../../../Store/Actions/actions';
 
 class About extends Component {
-    state = {
-        modalActive: false
-    }
 
     componentDidMount() {
         this.sectionsApearingOnScroll();
@@ -87,12 +86,6 @@ class About extends Component {
         });
     };
 
-    modalActivatorHandler = () => {
-        this.setState(prevState => {
-            return { modalActive: prevState.modalActive = true };
-        });
-    };
-
     render() {
 
         const header = (
@@ -150,33 +143,16 @@ class About extends Component {
                     <img src={photoOne} alt="hands" />
                     <div>
                         <h3>napędzany pasją i</h3>
-                        <Button btnType='linesInside' click={this.modalActivatorHandler}>Więcej</Button>
+                        <Button btnType='linesInside' click={this.props.onModalActivator}>Więcej</Button>
                     </div>
                 </div>
                 <div className="photo-two-wrapper">
                     <img src={photoTwo} alt="businessPeopleWorking" />
                     <div>
                         <h3>profesjonalizmem</h3>
-                        <Button btnType='linesInside' click={this.modalActivatorHandler}>Więcej</Button>
+                        <Button btnType='linesInside' click={this.props.onModalActivator}>Więcej</Button>
                     </div>
                 </div>
-                {/* <div class="statistics">
-                    <div>
-                        <i class="fa fa-graduation-cap"></i>
-                        <p>101</p>
-                        <h4>successful projects</h4>
-                    </div>
-                    <div>
-                        <i class="far fa-calendar-check"></i>
-                        <p>101</p>
-                        <h4>kept deadlines</h4>
-                    </div>
-                    <div>
-                        <i class="fa fa-users"></i>
-                        <p>101</p>
-                        <h4>happy clients</h4>
-                    </div>
-                </div> */}
             </section>
         );
 
@@ -188,9 +164,9 @@ class About extends Component {
                         <h3>Więcej niż lekcja
                     </h3>
                         <h4>Profesjonalnie, z pasją</h4>
-                        <p>Moi kursanci to osoby wymagające, dla których ważny jest osobisty rozwój, podnoszenie swoich kwalifikacji oraz poczucie, że dobrze zainwestowali swój czas. Dzięki nieustannemu dbaniu o osobistyty rozwój poparty międzynarodowymi certyfikatami, takimi jak Certificate of Proficiency in English (University of Cambridge ESOL Examinations), czy First Certificate for Teachers of Business English zdanemu w Londyńskiej Izbie Przemysłowo Handlowej mogę zaproponować swoim kursantom sesje z elementami pracy coachingowej z jasno i skutecznie zdefiniowanymi celami językowymi.
+                        <p>Moi kursanci to osoby wymagające, dla których ważny jest osobisty rozwój, podnoszenie swoich kwalifikacji oraz poczucie, że dobrze zainwestowali swój czas. Dzięki nieustannemu dbaniu o osobisty rozwój poparty międzynarodowymi certyfikatami, takimi jak Certificate of Proficiency in English (University of Cambridge ESOL Examinations), czy First Certificate for Teachers of Business English zdanemu w Londyńskiej Izbie Przemysłowo-Handlowej, mogę zaproponować swoim kursantom sesje z elementami pracy coachingowej z jasno i skutecznie zdefiniowanymi celami językowymi.
                     </p>
-                        <Button btnType='linesInside' click={this.modalActivatorHandler}>Więcej</Button>
+                        <Button btnType='linesInside' click={this.props.onModalActivator}>Więcej</Button>
                     </div>
                 </div>
                 <div className="s3-right-wrapper">
@@ -211,7 +187,7 @@ class About extends Component {
         const sectionFive = (
             <section data-section='five' className="s5">
                 <div>
-                    <p>Chcę więcej<span className="modal-activator" onClick={this.modalActivatorHandler}>...</span></p>
+                    <p>Chcę więcej<span className="modal-activator" onClick={this.props.onModalActivator}>...</span></p>
                 </div>
             </section>
         );
@@ -227,10 +203,17 @@ class About extends Component {
                     {sectionThree}
                 </main>
                 <Footer />
-                <PopUpModal modalActive={this.state.modalActive} />
+                <PopUpModal />
             </div>
         );
     };
 };
 
-export default About;
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onModalActivator: () => dispatch({ type: actionTypes.POP_UP_MODAL_ACTIVATED })
+    };
+};
+
+export default connect(null, mapDispatchToProps)(About);
